@@ -1,8 +1,8 @@
 namespace Grocery_Time_Manager_App
 {
-    public partial class Form1 : Form
+    public partial class frmHome : Form
     {
-        public Form1()
+        public frmHome()
         {
             InitializeComponent();
         }
