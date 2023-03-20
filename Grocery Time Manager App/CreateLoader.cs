@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Grocery_Time_Manager_App
 {
-    public partial class frmCreateAssignLoader : Form
+    public partial class frmCreateLoader : Form
     {
-        public frmCreateAssignLoader()
+        public frmCreateLoader()
         {
             InitializeComponent();
         }
