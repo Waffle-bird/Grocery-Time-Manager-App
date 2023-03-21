@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace Grocery_Time_Manager_App
 {
-    public partial class IndividualSummary : Form
+    public partial class frmIndividualSummary : Form
     {
-        public IndividualSummary()
+        public frmIndividualSummary()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHome window = new frmHome();
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
         }
     }
 }

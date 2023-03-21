@@ -47,43 +47,43 @@
             // 
             // btnCreateAssignLoader
             // 
-            this.btnCreateAssignLoader.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateAssignLoader.Location = new System.Drawing.Point(12, 101);
             this.btnCreateAssignLoader.Name = "btnCreateAssignLoader";
             this.btnCreateAssignLoader.Size = new System.Drawing.Size(324, 93);
             this.btnCreateAssignLoader.TabIndex = 1;
             this.btnCreateAssignLoader.Text = "Create and Assign Loader";
             this.btnCreateAssignLoader.UseVisualStyleBackColor = true;
+            this.btnCreateAssignLoader.Click += new System.EventHandler(this.btnCreateAssignLoader_Click);
             // 
             // btnManageShift
             // 
-            this.btnManageShift.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnManageShift.Location = new System.Drawing.Point(12, 200);
             this.btnManageShift.Name = "btnManageShift";
             this.btnManageShift.Size = new System.Drawing.Size(141, 73);
             this.btnManageShift.TabIndex = 2;
             this.btnManageShift.Text = "Manage Shift";
             this.btnManageShift.UseVisualStyleBackColor = true;
+            this.btnManageShift.Click += new System.EventHandler(this.btnManageShift_Click);
             // 
             // btnIndividualSummary
             // 
-            this.btnIndividualSummary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIndividualSummary.Location = new System.Drawing.Point(159, 200);
             this.btnIndividualSummary.Name = "btnIndividualSummary";
             this.btnIndividualSummary.Size = new System.Drawing.Size(177, 34);
             this.btnIndividualSummary.TabIndex = 3;
             this.btnIndividualSummary.Text = "Individual Summary";
             this.btnIndividualSummary.UseVisualStyleBackColor = true;
+            this.btnIndividualSummary.Click += new System.EventHandler(this.btnIndividualSummary_Click);
             // 
             // btnTeamSummary
             // 
-            this.btnTeamSummary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTeamSummary.Location = new System.Drawing.Point(159, 239);
             this.btnTeamSummary.Name = "btnTeamSummary";
             this.btnTeamSummary.Size = new System.Drawing.Size(177, 34);
             this.btnTeamSummary.TabIndex = 4;
             this.btnTeamSummary.Text = "Team Summary";
             this.btnTeamSummary.UseVisualStyleBackColor = true;
+            this.btnTeamSummary.Click += new System.EventHandler(this.btnTeamSummary_Click);
             // 
             // frmHome
             // 

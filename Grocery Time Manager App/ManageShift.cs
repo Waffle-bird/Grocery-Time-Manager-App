@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace Grocery_Time_Manager_App
 {
-    public partial class ManageShift : Form
+    public partial class frmManageShift : Form
     {
-        public ManageShift()
+        public frmManageShift()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHome window = new frmHome();
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Grocery_Time_Manager_App
 {
-    partial class TeamSummary
+    partial class frmTeamSummary
     {
         /// <summary>
         /// Required designer variable.
@@ -43,6 +43,7 @@
             this.btnBack.TabIndex = 4;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lblSummaryDate
             // 
@@ -77,7 +78,7 @@
             this.lblSummary.TabIndex = 13;
             this.lblSummary.Text = "Summary:";
             // 
-            // TeamSummary
+            // frmTeamSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +88,7 @@
             this.Controls.Add(this.lblSummaryDate);
             this.Controls.Add(this.dtpSummaryDate);
             this.Controls.Add(this.btnBack);
-            this.Name = "TeamSummary";
+            this.Name = "frmTeamSummary";
             this.Text = "TeamSummary";
             this.ResumeLayout(false);
             this.PerformLayout();

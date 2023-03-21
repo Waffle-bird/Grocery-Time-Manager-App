@@ -16,5 +16,21 @@ namespace Grocery_Time_Manager_App
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmHome window = new frmHome();
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
+        }
+
+        private void btnCreateLoader_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmCreateLoader window = new frmCreateLoader();
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
+        }
     }
 }

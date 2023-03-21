@@ -1,6 +1,6 @@
 ﻿namespace Grocery_Time_Manager_App
 {
-    partial class ManageShift
+    partial class frmManageShift
     {
         /// <summary>
         /// Required designer variable.
@@ -50,6 +50,7 @@
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // lsvWorkers
             // 
@@ -150,7 +151,7 @@
             this.dtpShiftDay.Size = new System.Drawing.Size(192, 23);
             this.dtpShiftDay.TabIndex = 15;
             // 
-            // ManageShift
+            // frmManageShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -167,7 +168,7 @@
             this.Controls.Add(this.lsvEmployees);
             this.Controls.Add(this.lsvWorkers);
             this.Controls.Add(this.btnBack);
-            this.Name = "ManageShift";
+            this.Name = "frmManageShift";
             this.Text = "ManageShift";
             this.ResumeLayout(false);
             this.PerformLayout();

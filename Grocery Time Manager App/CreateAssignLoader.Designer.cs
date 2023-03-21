@@ -48,6 +48,7 @@
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnCreateLoader
             // 
@@ -57,6 +58,7 @@
             this.btnCreateLoader.TabIndex = 1;
             this.btnCreateLoader.Text = "Create Loader";
             this.btnCreateLoader.UseVisualStyleBackColor = true;
+            this.btnCreateLoader.Click += new System.EventHandler(this.btnCreateLoader_Click);
             // 
             // lsvLoaders
             // 
