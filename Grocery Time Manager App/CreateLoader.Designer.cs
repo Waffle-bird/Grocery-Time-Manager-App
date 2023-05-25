@@ -105,6 +105,7 @@
             // 
             // dtpTimeIssued
             // 
+            this.dtpTimeIssued.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpTimeIssued.Location = new System.Drawing.Point(106, 177);
             this.dtpTimeIssued.Name = "dtpTimeIssued";
             this.dtpTimeIssued.Size = new System.Drawing.Size(191, 23);

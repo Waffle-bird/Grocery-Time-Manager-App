@@ -24,5 +24,13 @@ namespace Grocery_Time_Manager_App
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }
+
+        private void btnIndividualSummary_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmIndividualSummary window = new frmIndividualSummary();
+            window.FormClosed += (s, args) => this.Close();
+            window.Show();
+        }
     }
 }

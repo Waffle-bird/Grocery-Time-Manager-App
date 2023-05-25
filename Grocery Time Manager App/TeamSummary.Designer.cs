@@ -33,6 +33,7 @@
             this.dtpSummaryDate = new System.Windows.Forms.DateTimePicker();
             this.listView1 = new System.Windows.Forms.ListView();
             this.lblSummary = new System.Windows.Forms.Label();
+            this.btnIndividualSummary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -78,11 +79,22 @@
             this.lblSummary.TabIndex = 13;
             this.lblSummary.Text = "Summary:";
             // 
+            // btnIndividualSummary
+            // 
+            this.btnIndividualSummary.Location = new System.Drawing.Point(659, 12);
+            this.btnIndividualSummary.Name = "btnIndividualSummary";
+            this.btnIndividualSummary.Size = new System.Drawing.Size(129, 23);
+            this.btnIndividualSummary.TabIndex = 14;
+            this.btnIndividualSummary.Text = "Individual Summary";
+            this.btnIndividualSummary.UseVisualStyleBackColor = true;
+            this.btnIndividualSummary.Click += new System.EventHandler(this.btnIndividualSummary_Click);
+            // 
             // frmTeamSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnIndividualSummary);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.lblSummaryDate);
@@ -102,5 +114,6 @@
         private DateTimePicker dtpSummaryDate;
         private ListView listView1;
         private Label lblSummary;
+        private Button btnIndividualSummary;
     }
 }

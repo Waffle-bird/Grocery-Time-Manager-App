@@ -10,13 +10,20 @@ using System.Windows.Forms;
 
 namespace Grocery_Time_Manager_App
 {
-    public partial class frmIndividualSummary : Form
+    public partial class frmAddEmployee : Form
     {
-        public frmIndividualSummary()
+        private AppManager am;
+
+        public frmAddEmployee()
         {
+            this.am = new AppManager();
+
 
             InitializeComponent();
         }
+
+
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {
@@ -26,12 +33,15 @@ namespace Grocery_Time_Manager_App
             window.Show();
         }
 
-        private void btnTeamSummary_Click(object sender, EventArgs e)
+        private void btnEnter_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmTeamSummary window = new frmTeamSummary();
-            window.FormClosed += (s, args) => this.Close();
-            window.Show();
+            am.GenerateEmployee((int)nudId.Value, tbxName.Text);
+
+            nudId.Value = 0;
+            tbxName.Text = "";
+
+            MessageBox.Show($"Employee {am.GetPreviousEmployeeName()} (ID:{am.GetPreviousEmployeeId()}) submitted successfully");
+
         }
     }
 }

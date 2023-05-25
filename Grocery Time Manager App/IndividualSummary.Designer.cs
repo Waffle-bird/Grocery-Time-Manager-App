@@ -35,6 +35,7 @@
             this.lblSummary = new System.Windows.Forms.Label();
             this.dtpSummaryDate = new System.Windows.Forms.DateTimePicker();
             this.lblSummaryDate = new System.Windows.Forms.Label();
+            this.btnTeamSummary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBack
@@ -97,11 +98,22 @@
             this.lblSummaryDate.TabIndex = 9;
             this.lblSummaryDate.Text = "For the Day:";
             // 
+            // btnTeamSummary
+            // 
+            this.btnTeamSummary.Location = new System.Drawing.Point(659, 12);
+            this.btnTeamSummary.Name = "btnTeamSummary";
+            this.btnTeamSummary.Size = new System.Drawing.Size(129, 23);
+            this.btnTeamSummary.TabIndex = 15;
+            this.btnTeamSummary.Text = "Team Summary";
+            this.btnTeamSummary.UseVisualStyleBackColor = true;
+            this.btnTeamSummary.Click += new System.EventHandler(this.btnTeamSummary_Click);
+            // 
             // frmIndividualSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnTeamSummary);
             this.Controls.Add(this.lblSummaryDate);
             this.Controls.Add(this.dtpSummaryDate);
             this.Controls.Add(this.lblSummary);
@@ -125,5 +137,6 @@
         private Label lblSummary;
         private DateTimePicker dtpSummaryDate;
         private Label lblSummaryDate;
+        private Button btnTeamSummary;
     }
 }
