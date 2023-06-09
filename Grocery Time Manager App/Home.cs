@@ -5,6 +5,9 @@ namespace Grocery_Time_Manager_App
         public frmHome()
         {
             InitializeComponent();
+            this.Icon = new Icon("Images/logo.ico");
+
+            this.ActiveControl = null;
         }
 
         private void btnCreateAssignLoader_Click(object sender, EventArgs e)
@@ -13,6 +16,7 @@ namespace Grocery_Time_Manager_App
             frmCreateAssignLoader window = new frmCreateAssignLoader();
             window.FormClosed += (s, args) => this.Close();
             window.Show();
+
         }
 
         private void btnManageShift_Click(object sender, EventArgs e)
@@ -47,8 +51,6 @@ namespace Grocery_Time_Manager_App
             window.Show();
         }
 
-
-
         private void btnAddEmployee_MouseLeave(object sender, EventArgs e)
         {
             btnAddEmployee.BackColor = Color.FromArgb(255, 255, 255);
@@ -69,7 +71,7 @@ namespace Grocery_Time_Manager_App
 
         private void btnManageShift_MouseLeave(object sender, EventArgs e)
         {
-            btnManageShift.BackColor = Color.FromArgb(255, 255, 255); 
+            btnManageShift.BackColor = Color.FromArgb(255, 255, 255);
             btnManageShift.ForeColor = Color.FromArgb(226, 25, 44);
         }
 
@@ -83,26 +85,35 @@ namespace Grocery_Time_Manager_App
         {
             btnCreateAssignLoader.BackColor = Color.FromArgb(255, 255, 255);
             btnCreateAssignLoader.ForeColor = Color.FromArgb(226, 25, 44);
+
         }
 
         private void btnIndividualSummary_MouseEnter(object sender, EventArgs e)
         {
-
+            btnIndividualSummary.BackColor = Color.FromArgb(226, 25, 44);
+            btnIndividualSummary.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
         private void btnIndividualSummary_MouseLeave(object sender, EventArgs e)
         {
-
+            btnIndividualSummary.BackColor = Color.FromArgb(255, 255, 255);
+            btnIndividualSummary.ForeColor = Color.FromArgb(226, 25, 44);
         }
 
         private void btnTeamSummary_MouseEnter(object sender, EventArgs e)
         {
-
+            btnTeamSummary.BackColor = Color.FromArgb(226, 25, 44);
+            btnTeamSummary.ForeColor = Color.FromArgb(255, 255, 255);
         }
 
         private void btnTeamSummary_MouseLeave(object sender, EventArgs e)
         {
+            btnTeamSummary.BackColor = Color.FromArgb(255, 255, 255);
+            btnTeamSummary.ForeColor = Color.FromArgb(226, 25, 44);
+        }
 
+        private void frmHome_Load(object sender, EventArgs e)
+        {
         }
 
 
