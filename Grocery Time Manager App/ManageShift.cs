@@ -12,15 +12,18 @@ namespace Grocery_Time_Manager_App
 {
     public partial class frmManageShift : Form
     {
-        public frmManageShift()
+        AppManager am;
+        public frmManageShift(AppManager am)
         {
             InitializeComponent();
+            this.Icon = new Icon("Images/logo.ico");
+            this.am = am;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmHome window = new frmHome();
+            frmHome window = new frmHome(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }

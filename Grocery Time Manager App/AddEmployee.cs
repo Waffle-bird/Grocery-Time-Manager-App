@@ -18,8 +18,8 @@ namespace Grocery_Time_Manager_App
         {
             this.am = new AppManager();
 
-
             InitializeComponent();
+            this.Icon = new Icon("Images/logo.ico");
         }
 
 
@@ -28,7 +28,7 @@ namespace Grocery_Time_Manager_App
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmHome window = new frmHome();
+            frmHome window = new frmHome(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }

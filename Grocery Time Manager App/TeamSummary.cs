@@ -12,15 +12,18 @@ namespace Grocery_Time_Manager_App
 {
     public partial class frmTeamSummary : Form
     {
-        public frmTeamSummary()
+        AppManager am;
+        public frmTeamSummary(AppManager am)
         {
             InitializeComponent();
+            this.Icon = new Icon("Images/logo.ico");
+            this.am = am;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmHome window = new frmHome();
+            frmHome window = new frmHome(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }
@@ -28,7 +31,7 @@ namespace Grocery_Time_Manager_App
         private void btnIndividualSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmIndividualSummary window = new frmIndividualSummary();
+            frmIndividualSummary window = new frmIndividualSummary(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }

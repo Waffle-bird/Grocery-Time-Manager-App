@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 
 namespace Grocery_Time_Manager_App
 {
-    internal class AppManager
+    public class AppManager
     {
         List<Employee> employees;
+        Dictionary<int, List<string>> productTypes;
 
         //Constructor
         public AppManager()
         {
             employees = new List<Employee>();
+            productTypes = new Dictionary<int, List<string>>()
+            {
+                {1, new List<string>(){"Juice", "Cereal", "Spreads", "Desserts" } },
+                {2, new List<string>(){"Baking","Museli Bars"}}
+            };
         }
 
         //Get Methods
@@ -27,6 +33,20 @@ namespace Grocery_Time_Manager_App
             return employees[employees.Count - 1].GetId();
         }
 
+        public Dictionary<int, List<string>> GetProductTypes()
+        {
+            return productTypes;
+        }
+
+        //public int GetAisleNumbers() 
+        //{
+        //    return productTypes.Count;
+        //}
+
+        //public List<string> GetProductNames(int aisleNum) 
+        //{ 
+        //    return productTypes[aisleNum];
+        //}
 
         //Set Methods
 

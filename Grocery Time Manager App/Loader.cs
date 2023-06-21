@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grocery_Time_Manager_App
 {
-    internal class Loader
+    public class Loader
     {
         private int aisle;
         private string productType;
@@ -20,5 +20,10 @@ namespace Grocery_Time_Manager_App
             this.timeIssued = timeIssued;
             this.numBoxes = numBoxes;
         }
+
+        public int getAisle() {  return aisle; }
+        public string getProductType() {  return productType; }
+        public DateTime getTimeIssued() {  return timeIssued; }
+        public int getNumBoxes() { return numBoxes;}    
     }
 }

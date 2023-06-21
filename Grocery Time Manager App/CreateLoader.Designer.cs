@@ -28,139 +28,141 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBack = new System.Windows.Forms.Button();
-            this.lblAisle = new System.Windows.Forms.Label();
-            this.lblProductType = new System.Windows.Forms.Label();
-            this.lblNumBoxes = new System.Windows.Forms.Label();
-            this.lblTimeIssued = new System.Windows.Forms.Label();
-            this.nudAisle = new System.Windows.Forms.NumericUpDown();
-            this.nudNumBoxes = new System.Windows.Forms.NumericUpDown();
-            this.dtpTimeIssued = new System.Windows.Forms.DateTimePicker();
-            this.cbxProductType = new System.Windows.Forms.ComboBox();
-            this.btnEnter = new System.Windows.Forms.Button();
-            this.btnClearFields = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nudAisle)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNumBoxes)).BeginInit();
-            this.SuspendLayout();
+            btnBack = new Button();
+            lblAisle = new Label();
+            lblProductType = new Label();
+            lblNumBoxes = new Label();
+            lblTimeIssued = new Label();
+            nudAisle = new NumericUpDown();
+            nudNumBoxes = new NumericUpDown();
+            dtpTimeIssued = new DateTimePicker();
+            cbxProductType = new ComboBox();
+            btnEnter = new Button();
+            btnClearFields = new Button();
+            ((System.ComponentModel.ISupportInitialize)nudAisle).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudNumBoxes).BeginInit();
+            SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(95, 23);
-            this.btnBack.TabIndex = 1;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.Location = new Point(12, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(95, 23);
+            btnBack.TabIndex = 1;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // lblAisle
             // 
-            this.lblAisle.AutoSize = true;
-            this.lblAisle.Location = new System.Drawing.Point(56, 62);
-            this.lblAisle.Name = "lblAisle";
-            this.lblAisle.Size = new System.Drawing.Size(35, 15);
-            this.lblAisle.TabIndex = 2;
-            this.lblAisle.Text = "Aisle:";
+            lblAisle.AutoSize = true;
+            lblAisle.Location = new Point(56, 62);
+            lblAisle.Name = "lblAisle";
+            lblAisle.Size = new Size(35, 15);
+            lblAisle.TabIndex = 2;
+            lblAisle.Text = "Aisle:";
             // 
             // lblProductType
             // 
-            this.lblProductType.AutoSize = true;
-            this.lblProductType.Location = new System.Drawing.Point(12, 101);
-            this.lblProductType.Name = "lblProductType";
-            this.lblProductType.Size = new System.Drawing.Size(79, 15);
-            this.lblProductType.TabIndex = 3;
-            this.lblProductType.Text = "Product Type:";
+            lblProductType.AutoSize = true;
+            lblProductType.Location = new Point(12, 101);
+            lblProductType.Name = "lblProductType";
+            lblProductType.Size = new Size(79, 15);
+            lblProductType.TabIndex = 3;
+            lblProductType.Text = "Product Type:";
             // 
             // lblNumBoxes
             // 
-            this.lblNumBoxes.AutoSize = true;
-            this.lblNumBoxes.Location = new System.Drawing.Point(28, 142);
-            this.lblNumBoxes.Name = "lblNumBoxes";
-            this.lblNumBoxes.Size = new System.Drawing.Size(63, 15);
-            this.lblNumBoxes.TabIndex = 4;
-            this.lblNumBoxes.Text = "No. Boxes:";
+            lblNumBoxes.AutoSize = true;
+            lblNumBoxes.Location = new Point(28, 142);
+            lblNumBoxes.Name = "lblNumBoxes";
+            lblNumBoxes.Size = new Size(63, 15);
+            lblNumBoxes.TabIndex = 4;
+            lblNumBoxes.Text = "No. Boxes:";
             // 
             // lblTimeIssued
             // 
-            this.lblTimeIssued.AutoSize = true;
-            this.lblTimeIssued.Location = new System.Drawing.Point(19, 183);
-            this.lblTimeIssued.Name = "lblTimeIssued";
-            this.lblTimeIssued.Size = new System.Drawing.Size(72, 15);
-            this.lblTimeIssued.TabIndex = 5;
-            this.lblTimeIssued.Text = "Time Issued:";
+            lblTimeIssued.AutoSize = true;
+            lblTimeIssued.Location = new Point(19, 183);
+            lblTimeIssued.Name = "lblTimeIssued";
+            lblTimeIssued.Size = new Size(72, 15);
+            lblTimeIssued.TabIndex = 5;
+            lblTimeIssued.Text = "Time Issued:";
             // 
             // nudAisle
             // 
-            this.nudAisle.Location = new System.Drawing.Point(106, 60);
-            this.nudAisle.Name = "nudAisle";
-            this.nudAisle.Size = new System.Drawing.Size(120, 23);
-            this.nudAisle.TabIndex = 6;
+            nudAisle.Location = new Point(106, 60);
+            nudAisle.Name = "nudAisle";
+            nudAisle.Size = new Size(120, 23);
+            nudAisle.TabIndex = 6;
+            nudAisle.ValueChanged += nudAisle_ValueChanged;
             // 
             // nudNumBoxes
             // 
-            this.nudNumBoxes.Location = new System.Drawing.Point(106, 140);
-            this.nudNumBoxes.Name = "nudNumBoxes";
-            this.nudNumBoxes.Size = new System.Drawing.Size(120, 23);
-            this.nudNumBoxes.TabIndex = 7;
+            nudNumBoxes.Location = new Point(106, 140);
+            nudNumBoxes.Name = "nudNumBoxes";
+            nudNumBoxes.Size = new Size(120, 23);
+            nudNumBoxes.TabIndex = 7;
             // 
             // dtpTimeIssued
             // 
-            this.dtpTimeIssued.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTimeIssued.Location = new System.Drawing.Point(106, 177);
-            this.dtpTimeIssued.Name = "dtpTimeIssued";
-            this.dtpTimeIssued.Size = new System.Drawing.Size(191, 23);
-            this.dtpTimeIssued.TabIndex = 8;
-            this.dtpTimeIssued.Value = new System.DateTime(2023, 3, 20, 12, 53, 22, 0);
+            dtpTimeIssued.CustomFormat = "HH:MM";
+            dtpTimeIssued.Format = DateTimePickerFormat.Custom;
+            dtpTimeIssued.Location = new Point(106, 177);
+            dtpTimeIssued.Name = "dtpTimeIssued";
+            dtpTimeIssued.Size = new Size(191, 23);
+            dtpTimeIssued.TabIndex = 8;
+            dtpTimeIssued.Value = new DateTime(2023, 6, 22, 0, 0, 0, 0);
             // 
             // cbxProductType
             // 
-            this.cbxProductType.FormattingEnabled = true;
-            this.cbxProductType.Location = new System.Drawing.Point(106, 98);
-            this.cbxProductType.Name = "cbxProductType";
-            this.cbxProductType.Size = new System.Drawing.Size(120, 23);
-            this.cbxProductType.TabIndex = 9;
+            cbxProductType.FormattingEnabled = true;
+            cbxProductType.Location = new Point(106, 98);
+            cbxProductType.Name = "cbxProductType";
+            cbxProductType.Size = new Size(120, 23);
+            cbxProductType.TabIndex = 9;
             // 
             // btnEnter
             // 
-            this.btnEnter.Location = new System.Drawing.Point(12, 290);
-            this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(168, 43);
-            this.btnEnter.TabIndex = 10;
-            this.btnEnter.Text = "Enter";
-            this.btnEnter.UseVisualStyleBackColor = true;
+            btnEnter.Location = new Point(12, 290);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Size = new Size(168, 43);
+            btnEnter.TabIndex = 10;
+            btnEnter.Text = "Enter";
+            btnEnter.UseVisualStyleBackColor = true;
+            btnEnter.Click += btnEnter_Click;
             // 
             // btnClearFields
             // 
-            this.btnClearFields.Location = new System.Drawing.Point(202, 206);
-            this.btnClearFields.Name = "btnClearFields";
-            this.btnClearFields.Size = new System.Drawing.Size(95, 23);
-            this.btnClearFields.TabIndex = 11;
-            this.btnClearFields.Text = "Clear Fields";
-            this.btnClearFields.UseVisualStyleBackColor = true;
+            btnClearFields.Location = new Point(202, 206);
+            btnClearFields.Name = "btnClearFields";
+            btnClearFields.Size = new Size(95, 23);
+            btnClearFields.TabIndex = 11;
+            btnClearFields.Text = "Clear Fields";
+            btnClearFields.UseVisualStyleBackColor = true;
             // 
             // frmCreateLoader
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnClearFields);
-            this.Controls.Add(this.btnEnter);
-            this.Controls.Add(this.cbxProductType);
-            this.Controls.Add(this.dtpTimeIssued);
-            this.Controls.Add(this.nudNumBoxes);
-            this.Controls.Add(this.nudAisle);
-            this.Controls.Add(this.lblTimeIssued);
-            this.Controls.Add(this.lblNumBoxes);
-            this.Controls.Add(this.lblProductType);
-            this.Controls.Add(this.lblAisle);
-            this.Controls.Add(this.btnBack);
-            this.Name = "frmCreateLoader";
-            this.Text = "Create Loader";
-            ((System.ComponentModel.ISupportInitialize)(this.nudAisle)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudNumBoxes)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnClearFields);
+            Controls.Add(btnEnter);
+            Controls.Add(cbxProductType);
+            Controls.Add(dtpTimeIssued);
+            Controls.Add(nudNumBoxes);
+            Controls.Add(nudAisle);
+            Controls.Add(lblTimeIssued);
+            Controls.Add(lblNumBoxes);
+            Controls.Add(lblProductType);
+            Controls.Add(lblAisle);
+            Controls.Add(btnBack);
+            Name = "frmCreateLoader";
+            Text = "Create Loader";
+            ((System.ComponentModel.ISupportInitialize)nudAisle).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudNumBoxes).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

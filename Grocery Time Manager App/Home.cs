@@ -2,18 +2,19 @@ namespace Grocery_Time_Manager_App
 {
     public partial class frmHome : Form
     {
-        public frmHome()
+        AppManager am;
+
+        public frmHome(AppManager am)
         {
             InitializeComponent();
             this.Icon = new Icon("Images/logo.ico");
-
-            this.ActiveControl = null;
+            this.am = am;
         }
 
         private void btnCreateAssignLoader_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmCreateAssignLoader window = new frmCreateAssignLoader();
+            frmCreateAssignLoader window = new frmCreateAssignLoader(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
 
@@ -22,7 +23,7 @@ namespace Grocery_Time_Manager_App
         private void btnManageShift_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmManageShift window = new frmManageShift();
+            frmManageShift window = new frmManageShift(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }
@@ -30,7 +31,7 @@ namespace Grocery_Time_Manager_App
         private void btnIndividualSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmIndividualSummary window = new frmIndividualSummary();
+            frmIndividualSummary window = new frmIndividualSummary(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }
@@ -38,7 +39,7 @@ namespace Grocery_Time_Manager_App
         private void btnTeamSummary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmTeamSummary window = new frmTeamSummary();
+            frmTeamSummary window = new frmTeamSummary(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }

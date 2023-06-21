@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grocery_Time_Manager_App
 {
-    internal class Employee
+    public class Employee
     {
         private int ID;
         private string Name;
