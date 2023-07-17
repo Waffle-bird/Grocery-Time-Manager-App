@@ -18,7 +18,8 @@ namespace Grocery_Time_Manager_App
             productTypes = new Dictionary<int, List<string>>()
             {
                 {1, new List<string>(){"Juice", "Cereal", "Spreads", "Desserts" } },
-                {2, new List<string>(){"Baking","Museli Bars"}}
+                {2, new List<string>(){"Baking","Museli Bars"}},
+                {3, new List<string>(){"Mexican", "Fish", "Pasta","Rice","Sauce", }}
             };
         }
 

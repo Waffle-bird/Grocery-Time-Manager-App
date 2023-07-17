@@ -23,6 +23,8 @@ namespace Grocery_Time_Manager_App
             this.Icon = new Icon("Images/logo.ico");
             this.am = am;
             nudAisle.Minimum = 1;
+
+            //Controls the maximum aisle value to the number of aisles specified in the productTypes dictionary
             nudAisle.Maximum = am.GetProductTypes().Count;
 
         }
@@ -49,13 +51,30 @@ namespace Grocery_Time_Manager_App
             window.Show();
         }
 
+        private void btnClearFields_Click(object sender, EventArgs e)
+        {
+            cbxProductType.Text = "";
+            nudNumBoxes.Value = 0;
+            dtpTimeIssued.Value = DateTime.Today;
+            nudAisle.Value = 1;
+        }
+
+
+        //Changes the product types in the cbxProductTypes combo box to reflect the selected aisle number
         private void nudAisle_ValueChanged(object sender, EventArgs e)
         {
+            //Ensures that if the aisle number is changed, the wrong product type is not still in the aisle combo box
+            cbxProductType.Text = "";
+            nudNumBoxes.Value = 0;
+            dtpTimeIssued.Value = DateTime.Today;
+
             cbxProductType.Items.Clear();
             foreach (var product in am.GetProductTypes()[(int)nudAisle.Value])
             {
                 cbxProductType.Items.Add(product);
             }
         }
+
+
     }
 }

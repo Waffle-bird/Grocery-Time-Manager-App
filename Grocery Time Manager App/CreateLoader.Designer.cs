@@ -106,13 +106,13 @@
             // 
             // dtpTimeIssued
             // 
-            dtpTimeIssued.CustomFormat = "HH:MM";
+            dtpTimeIssued.CustomFormat = "HH:mm";
             dtpTimeIssued.Format = DateTimePickerFormat.Custom;
             dtpTimeIssued.Location = new Point(106, 177);
             dtpTimeIssued.Name = "dtpTimeIssued";
             dtpTimeIssued.Size = new Size(191, 23);
             dtpTimeIssued.TabIndex = 8;
-            dtpTimeIssued.Value = new DateTime(2023, 6, 22, 0, 0, 0, 0);
+            dtpTimeIssued.Value = new DateTime(2023, 7, 17, 0, 0, 0, 0);
             // 
             // cbxProductType
             // 
@@ -121,6 +121,10 @@
             cbxProductType.Name = "cbxProductType";
             cbxProductType.Size = new Size(120, 23);
             cbxProductType.TabIndex = 9;
+
+            //Stops users from inputting erroneous data into the Product Type Combo Box
+            cbxProductType.DropDownStyle = ComboBoxStyle.DropDownList;
+
             // 
             // btnEnter
             // 
@@ -140,6 +144,7 @@
             btnClearFields.TabIndex = 11;
             btnClearFields.Text = "Clear Fields";
             btnClearFields.UseVisualStyleBackColor = true;
+            btnClearFields.Click += btnClearFields_Click;
             // 
             // frmCreateLoader
             // 

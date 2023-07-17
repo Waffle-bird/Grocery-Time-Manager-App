@@ -92,6 +92,8 @@ namespace Grocery_Time_Manager_App
         private void PopulateListView(DataView dv)
         {
             lsvUnassignedLoaders.Items.Clear();
+
+            //populates the list view
             foreach (DataRow row in dv.ToTable().Rows)
             {
                 lsvUnassignedLoaders.Items.Add(new ListViewItem(new String[] {row[0].ToString(), row[1].ToString(), row[2].ToString(),

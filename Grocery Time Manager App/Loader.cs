@@ -12,6 +12,7 @@ namespace Grocery_Time_Manager_App
         private string productType;
         private DateTime timeIssued;
         private int numBoxes;
+        private bool completed;
 
         public Loader(int aisle, string productType, DateTime timeIssued, int numBoxes)
         {

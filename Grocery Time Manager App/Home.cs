@@ -11,6 +11,8 @@ namespace Grocery_Time_Manager_App
             this.am = am;
         }
 
+
+
         private void btnCreateAssignLoader_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -52,6 +54,9 @@ namespace Grocery_Time_Manager_App
             window.Show();
         }
 
+
+
+        //Home form button styling and hover effects
         private void btnAddEmployee_MouseLeave(object sender, EventArgs e)
         {
             btnAddEmployee.BackColor = Color.FromArgb(255, 255, 255);

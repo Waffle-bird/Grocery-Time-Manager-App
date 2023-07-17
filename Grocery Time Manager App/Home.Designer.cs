@@ -66,7 +66,7 @@ namespace Grocery_Time_Manager_App
             btnManageShift.Location = new Point(12, 200);
             btnManageShift.Margin = new Padding(0);
             btnManageShift.Name = "btnManageShift";
-            btnManageShift.Size = new Size(141, 73);
+            btnManageShift.Size = new Size(161, 73);
             btnManageShift.TabIndex = 2;
             btnManageShift.TabStop = false;
             btnManageShift.Text = "Manage Shift";
@@ -80,9 +80,9 @@ namespace Grocery_Time_Manager_App
             btnIndividualSummary.FlatAppearance.BorderColor = Color.FromArgb(226, 25, 44);
             btnIndividualSummary.FlatStyle = FlatStyle.Flat;
             btnIndividualSummary.ForeColor = Color.FromArgb(226, 25, 44);
-            btnIndividualSummary.Location = new Point(159, 200);
+            btnIndividualSummary.Location = new Point(179, 200);
             btnIndividualSummary.Name = "btnIndividualSummary";
-            btnIndividualSummary.Size = new Size(177, 34);
+            btnIndividualSummary.Size = new Size(157, 34);
             btnIndividualSummary.TabIndex = 3;
             btnIndividualSummary.TabStop = false;
             btnIndividualSummary.Text = "Individual Summary";
@@ -96,9 +96,9 @@ namespace Grocery_Time_Manager_App
             btnTeamSummary.FlatAppearance.BorderColor = Color.FromArgb(226, 25, 44);
             btnTeamSummary.FlatStyle = FlatStyle.Flat;
             btnTeamSummary.ForeColor = Color.FromArgb(226, 25, 44);
-            btnTeamSummary.Location = new Point(159, 239);
+            btnTeamSummary.Location = new Point(179, 239);
             btnTeamSummary.Name = "btnTeamSummary";
-            btnTeamSummary.Size = new Size(177, 34);
+            btnTeamSummary.Size = new Size(157, 34);
             btnTeamSummary.TabIndex = 4;
             btnTeamSummary.TabStop = false;
             btnTeamSummary.Text = "Team Summary";
@@ -112,7 +112,7 @@ namespace Grocery_Time_Manager_App
             btnAddEmployee.FlatAppearance.BorderColor = Color.FromArgb(112, 51, 119);
             btnAddEmployee.FlatStyle = FlatStyle.Flat;
             btnAddEmployee.ForeColor = Color.FromArgb(112, 51, 119);
-            btnAddEmployee.Location = new Point(91, 279);
+            btnAddEmployee.Location = new Point(115, 279);
             btnAddEmployee.Margin = new Padding(0);
             btnAddEmployee.Name = "btnAddEmployee";
             btnAddEmployee.Size = new Size(120, 25);
