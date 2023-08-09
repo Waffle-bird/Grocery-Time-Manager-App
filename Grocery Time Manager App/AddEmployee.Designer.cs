@@ -28,96 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBack = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
-            this.tbxName = new System.Windows.Forms.TextBox();
-            this.lblAddEmployee = new System.Windows.Forms.Label();
-            this.btnEnter = new System.Windows.Forms.Button();
-            this.IblId = new System.Windows.Forms.Label();
-            this.nudId = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
-            this.SuspendLayout();
+            btnBack = new Button();
+            lblName = new Label();
+            tbxName = new TextBox();
+            lblAddEmployee = new Label();
+            btnEnter = new Button();
+            SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(95, 23);
-            this.btnBack.TabIndex = 3;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.Location = new Point(12, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(95, 23);
+            btnBack.TabIndex = 3;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // lblName
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 92);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(42, 15);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Name:";
+            lblName.AutoSize = true;
+            lblName.Location = new Point(12, 92);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(42, 15);
+            lblName.TabIndex = 4;
+            lblName.Text = "Name:";
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(69, 89);
-            this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(100, 23);
-            this.tbxName.TabIndex = 5;
+            tbxName.Location = new Point(69, 89);
+            tbxName.Name = "tbxName";
+            tbxName.Size = new Size(100, 23);
+            tbxName.TabIndex = 5;
             // 
             // lblAddEmployee
             // 
-            this.lblAddEmployee.AutoSize = true;
-            this.lblAddEmployee.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblAddEmployee.Location = new System.Drawing.Point(12, 49);
-            this.lblAddEmployee.Name = "lblAddEmployee";
-            this.lblAddEmployee.Size = new System.Drawing.Size(163, 25);
-            this.lblAddEmployee.TabIndex = 6;
-            this.lblAddEmployee.Text = "Add an Employee:";
+            lblAddEmployee.AutoSize = true;
+            lblAddEmployee.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddEmployee.Location = new Point(12, 49);
+            lblAddEmployee.Name = "lblAddEmployee";
+            lblAddEmployee.Size = new Size(163, 25);
+            lblAddEmployee.TabIndex = 6;
+            lblAddEmployee.Text = "Add an Employee:";
             // 
             // btnEnter
             // 
-            this.btnEnter.Location = new System.Drawing.Point(12, 196);
-            this.btnEnter.Name = "btnEnter";
-            this.btnEnter.Size = new System.Drawing.Size(95, 23);
-            this.btnEnter.TabIndex = 7;
-            this.btnEnter.Text = "Enter";
-            this.btnEnter.UseVisualStyleBackColor = true;
-            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
-            // 
-            // IblId
-            // 
-            this.IblId.AutoSize = true;
-            this.IblId.Location = new System.Drawing.Point(12, 133);
-            this.IblId.Name = "IblId";
-            this.IblId.Size = new System.Drawing.Size(21, 15);
-            this.IblId.TabIndex = 8;
-            this.IblId.Text = "ID:";
-            // 
-            // nudId
-            // 
-            this.nudId.Location = new System.Drawing.Point(69, 131);
-            this.nudId.Name = "nudId";
-            this.nudId.Size = new System.Drawing.Size(100, 23);
-            this.nudId.TabIndex = 9;
+            btnEnter.Location = new Point(12, 144);
+            btnEnter.Name = "btnEnter";
+            btnEnter.Size = new Size(95, 23);
+            btnEnter.TabIndex = 7;
+            btnEnter.Text = "Enter";
+            btnEnter.UseVisualStyleBackColor = true;
+            btnEnter.Click += btnEnter_Click;
             // 
             // frmAddEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.nudId);
-            this.Controls.Add(this.IblId);
-            this.Controls.Add(this.btnEnter);
-            this.Controls.Add(this.lblAddEmployee);
-            this.Controls.Add(this.tbxName);
-            this.Controls.Add(this.lblName);
-            this.Controls.Add(this.btnBack);
-            this.Name = "frmAddEmployee";
-            this.Text = "Add Employee";
-            ((System.ComponentModel.ISupportInitialize)(this.nudId)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnEnter);
+            Controls.Add(lblAddEmployee);
+            Controls.Add(tbxName);
+            Controls.Add(lblName);
+            Controls.Add(btnBack);
+            Name = "frmAddEmployee";
+            Text = "Add Employee";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -127,7 +104,5 @@
         private TextBox tbxName;
         private Label lblAddEmployee;
         private Button btnEnter;
-        private Label IblId;
-        private NumericUpDown nudId;
     }
 }

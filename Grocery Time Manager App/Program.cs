@@ -9,6 +9,9 @@ namespace Grocery_Time_Manager_App
         static void Main()
         {
             AppManager appManager = new AppManager();
+
+            appManager.LoadEmployees();
+
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

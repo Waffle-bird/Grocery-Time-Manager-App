@@ -49,7 +49,7 @@ namespace Grocery_Time_Manager_App
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmAddEmployee window = new frmAddEmployee();
+            frmAddEmployee window = new frmAddEmployee(am);
             window.FormClosed += (s, args) => this.Close();
             window.Show();
         }

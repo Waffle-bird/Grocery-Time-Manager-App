@@ -13,10 +13,11 @@ namespace Grocery_Time_Manager_App
     public partial class frmAddEmployee : Form
     {
         private AppManager am;
+        private int ID = 0;
 
-        public frmAddEmployee()
+        public frmAddEmployee(AppManager am)
         {
-            this.am = new AppManager();
+            this.am = am;
 
             InitializeComponent();
             this.Icon = new Icon("Images/logo.ico");
@@ -35,12 +36,23 @@ namespace Grocery_Time_Manager_App
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            am.GenerateEmployee((int)nudId.Value, tbxName.Text);
+            //If there are no employees previously created, generate an employee with an ID of 0
+            if (am.NumEmployees() == 0)
+            {
+                am.GenerateEmployee(0, tbxName.Text);
+            }
 
-            nudId.Value = 0;
+            //If there are already employees generated, generate a new employee with and ID +1 of the last added employee
+            else
+            {
+                am.GenerateEmployee(am.GetPreviousEmployeeId() + 1, tbxName.Text);
+            }
+
+
             tbxName.Text = "";
 
-            MessageBox.Show($"Employee {am.GetPreviousEmployeeName()} (ID:{am.GetPreviousEmployeeId()}) submitted successfully");
+            MessageBox.Show($"Employee {am.GetPreviousEmployeeName()} submitted successfully\n" +
+                $"(ID:{am.GetPreviousEmployeeId()})\t (number of employees:{am.NumEmployees()}) ");
 
         }
     }

@@ -15,9 +15,8 @@ namespace Grocery_Time_Manager_App
         private DataTable dt;
         private DataView dv;
         private AppManager am;
+        private List<Loader> unassignedLoaderList;
 
-
-        List<Loader> unassignedLoaderList;
         public frmCreateAssignLoader(AppManager am)
         {
             this.am = am;
@@ -96,8 +95,7 @@ namespace Grocery_Time_Manager_App
             //populates the list view
             foreach (DataRow row in dv.ToTable().Rows)
             {
-                lsvUnassignedLoaders.Items.Add(new ListViewItem(new String[] {row[0].ToString(), row[1].ToString(), row[2].ToString(),
-                    row[3].ToString()}));
+                lsvUnassignedLoaders.Items.Add(new ListViewItem(new String[] {row[0].ToString(), row[1].ToString(), row[2].ToString(), row[3].ToString() }));
             }
         }
 

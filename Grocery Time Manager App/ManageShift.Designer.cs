@@ -28,151 +28,179 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBack = new System.Windows.Forms.Button();
-            this.lsvWorkers = new System.Windows.Forms.ListView();
-            this.lsvEmployees = new System.Windows.Forms.ListView();
-            this.btnMoveLeft = new System.Windows.Forms.Button();
-            this.btnMoveRight = new System.Windows.Forms.Button();
-            this.lblEmployees = new System.Windows.Forms.Label();
-            this.lblWorkers = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblShiftTime = new System.Windows.Forms.Label();
-            this.rbtAM = new System.Windows.Forms.RadioButton();
-            this.rbtPM = new System.Windows.Forms.RadioButton();
-            this.dtpShiftDay = new System.Windows.Forms.DateTimePicker();
-            this.SuspendLayout();
+            btnBack = new Button();
+            lsvWorkers = new ListView();
+            lsvEmployees = new ListView();
+            btnMoveLeft = new Button();
+            btnMoveRight = new Button();
+            lblEmployees = new Label();
+            lblWorkers = new Label();
+            label2 = new Label();
+            lblShiftTime = new Label();
+            rbtAM = new RadioButton();
+            rbtPM = new RadioButton();
+            dtpShiftDay = new DateTimePicker();
+            tbxSearch = new TextBox();
+            lblsearch = new Label();
+            SuspendLayout();
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(95, 23);
-            this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            btnBack.Location = new Point(12, 12);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(95, 23);
+            btnBack.TabIndex = 2;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
             // 
             // lsvWorkers
             // 
-            this.lsvWorkers.Location = new System.Drawing.Point(347, 104);
-            this.lsvWorkers.Name = "lsvWorkers";
-            this.lsvWorkers.Size = new System.Drawing.Size(228, 311);
-            this.lsvWorkers.TabIndex = 3;
-            this.lsvWorkers.UseCompatibleStateImageBehavior = false;
+            lsvWorkers.FullRowSelect = true;
+            lsvWorkers.Location = new Point(347, 104);
+            lsvWorkers.Name = "lsvWorkers";
+            lsvWorkers.Size = new Size(228, 311);
+            lsvWorkers.TabIndex = 3;
+            lsvWorkers.UseCompatibleStateImageBehavior = false;
+            lsvWorkers.SelectedIndexChanged += lsvWorkers_SelectedIndexChanged;
             // 
             // lsvEmployees
             // 
-            this.lsvEmployees.Location = new System.Drawing.Point(12, 104);
-            this.lsvEmployees.Name = "lsvEmployees";
-            this.lsvEmployees.Size = new System.Drawing.Size(228, 311);
-            this.lsvEmployees.TabIndex = 4;
-            this.lsvEmployees.UseCompatibleStateImageBehavior = false;
+            lsvEmployees.FullRowSelect = true;
+            lsvEmployees.Location = new Point(12, 104);
+            lsvEmployees.Name = "lsvEmployees";
+            lsvEmployees.Size = new Size(228, 311);
+            lsvEmployees.TabIndex = 4;
+            lsvEmployees.UseCompatibleStateImageBehavior = false;
+            lsvEmployees.SelectedIndexChanged += lsvEmployees_SelectedIndexChanged;
             // 
             // btnMoveLeft
             // 
-            this.btnMoveLeft.Location = new System.Drawing.Point(257, 270);
-            this.btnMoveLeft.Name = "btnMoveLeft";
-            this.btnMoveLeft.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveLeft.TabIndex = 7;
-            this.btnMoveLeft.Text = "<===";
-            this.btnMoveLeft.UseVisualStyleBackColor = true;
+            btnMoveLeft.Location = new Point(257, 270);
+            btnMoveLeft.Name = "btnMoveLeft";
+            btnMoveLeft.Size = new Size(75, 23);
+            btnMoveLeft.TabIndex = 7;
+            btnMoveLeft.Text = "<===";
+            btnMoveLeft.UseVisualStyleBackColor = true;
+            btnMoveLeft.Click += btnMoveLeft_Click;
             // 
             // btnMoveRight
             // 
-            this.btnMoveRight.Location = new System.Drawing.Point(257, 241);
-            this.btnMoveRight.Name = "btnMoveRight";
-            this.btnMoveRight.Size = new System.Drawing.Size(75, 23);
-            this.btnMoveRight.TabIndex = 6;
-            this.btnMoveRight.Text = "===>";
-            this.btnMoveRight.UseVisualStyleBackColor = true;
+            btnMoveRight.Location = new Point(257, 241);
+            btnMoveRight.Name = "btnMoveRight";
+            btnMoveRight.Size = new Size(75, 23);
+            btnMoveRight.TabIndex = 6;
+            btnMoveRight.Text = "===>";
+            btnMoveRight.UseVisualStyleBackColor = true;
+            btnMoveRight.Click += btnMoveRight_Click;
             // 
             // lblEmployees
             // 
-            this.lblEmployees.AutoSize = true;
-            this.lblEmployees.Location = new System.Drawing.Point(12, 86);
-            this.lblEmployees.Name = "lblEmployees";
-            this.lblEmployees.Size = new System.Drawing.Size(67, 15);
-            this.lblEmployees.TabIndex = 8;
-            this.lblEmployees.Text = "Employees:";
+            lblEmployees.AutoSize = true;
+            lblEmployees.Location = new Point(12, 86);
+            lblEmployees.Name = "lblEmployees";
+            lblEmployees.Size = new Size(67, 15);
+            lblEmployees.TabIndex = 8;
+            lblEmployees.Text = "Employees:";
             // 
             // lblWorkers
             // 
-            this.lblWorkers.AutoSize = true;
-            this.lblWorkers.Location = new System.Drawing.Point(347, 86);
-            this.lblWorkers.Name = "lblWorkers";
-            this.lblWorkers.Size = new System.Drawing.Size(89, 15);
-            this.lblWorkers.TabIndex = 9;
-            this.lblWorkers.Text = "Working Today:";
+            lblWorkers.AutoSize = true;
+            lblWorkers.Location = new Point(347, 86);
+            lblWorkers.Name = "lblWorkers";
+            lblWorkers.Size = new Size(89, 15);
+            lblWorkers.TabIndex = 9;
+            lblWorkers.Text = "Working Today:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(347, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 15);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Day:";
+            label2.AutoSize = true;
+            label2.Location = new Point(347, 40);
+            label2.Name = "label2";
+            label2.Size = new Size(30, 15);
+            label2.TabIndex = 11;
+            label2.Text = "Day:";
             // 
             // lblShiftTime
             // 
-            this.lblShiftTime.AutoSize = true;
-            this.lblShiftTime.Location = new System.Drawing.Point(347, 12);
-            this.lblShiftTime.Name = "lblShiftTime";
-            this.lblShiftTime.Size = new System.Drawing.Size(66, 15);
-            this.lblShiftTime.TabIndex = 12;
-            this.lblShiftTime.Text = " Shift Time:";
+            lblShiftTime.AutoSize = true;
+            lblShiftTime.Location = new Point(347, 12);
+            lblShiftTime.Name = "lblShiftTime";
+            lblShiftTime.Size = new Size(66, 15);
+            lblShiftTime.TabIndex = 12;
+            lblShiftTime.Text = " Shift Time:";
             // 
             // rbtAM
             // 
-            this.rbtAM.AutoSize = true;
-            this.rbtAM.Location = new System.Drawing.Point(419, 10);
-            this.rbtAM.Name = "rbtAM";
-            this.rbtAM.Size = new System.Drawing.Size(44, 19);
-            this.rbtAM.TabIndex = 13;
-            this.rbtAM.TabStop = true;
-            this.rbtAM.Text = "AM";
-            this.rbtAM.UseVisualStyleBackColor = true;
+            rbtAM.AutoSize = true;
+            rbtAM.Checked = true;
+            rbtAM.Location = new Point(419, 10);
+            rbtAM.Name = "rbtAM";
+            rbtAM.Size = new Size(44, 19);
+            rbtAM.TabIndex = 13;
+            rbtAM.TabStop = true;
+            rbtAM.Text = "AM";
+            rbtAM.UseVisualStyleBackColor = true;
+            rbtAM.CheckedChanged += rbtAM_CheckedChanged;
             // 
             // rbtPM
             // 
-            this.rbtPM.AutoSize = true;
-            this.rbtPM.Location = new System.Drawing.Point(478, 10);
-            this.rbtPM.Name = "rbtPM";
-            this.rbtPM.Size = new System.Drawing.Size(43, 19);
-            this.rbtPM.TabIndex = 14;
-            this.rbtPM.TabStop = true;
-            this.rbtPM.Text = "PM";
-            this.rbtPM.UseVisualStyleBackColor = true;
+            rbtPM.AutoSize = true;
+            rbtPM.Location = new Point(478, 10);
+            rbtPM.Name = "rbtPM";
+            rbtPM.Size = new Size(43, 19);
+            rbtPM.TabIndex = 14;
+            rbtPM.Text = "PM";
+            rbtPM.UseVisualStyleBackColor = true;
             // 
             // dtpShiftDay
             // 
-            this.dtpShiftDay.Location = new System.Drawing.Point(383, 35);
-            this.dtpShiftDay.Name = "dtpShiftDay";
-            this.dtpShiftDay.Size = new System.Drawing.Size(192, 23);
-            this.dtpShiftDay.TabIndex = 15;
+            dtpShiftDay.Location = new Point(383, 35);
+            dtpShiftDay.Name = "dtpShiftDay";
+            dtpShiftDay.Size = new Size(192, 23);
+            dtpShiftDay.TabIndex = 15;
+            dtpShiftDay.ValueChanged += dtpShiftDay_ValueChanged;
+            // 
+            // tbxSearch
+            // 
+            tbxSearch.Location = new Point(69, 51);
+            tbxSearch.Name = "tbxSearch";
+            tbxSearch.Size = new Size(100, 23);
+            tbxSearch.TabIndex = 16;
+            tbxSearch.TextChanged += tbxSearch_TextChanged;
+            // 
+            // lblsearch
+            // 
+            lblsearch.AutoSize = true;
+            lblsearch.Location = new Point(12, 54);
+            lblsearch.Name = "lblsearch";
+            lblsearch.Size = new Size(45, 15);
+            lblsearch.TabIndex = 17;
+            lblsearch.Text = "Search:";
             // 
             // frmManageShift
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dtpShiftDay);
-            this.Controls.Add(this.rbtPM);
-            this.Controls.Add(this.rbtAM);
-            this.Controls.Add(this.lblShiftTime);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.lblWorkers);
-            this.Controls.Add(this.lblEmployees);
-            this.Controls.Add(this.btnMoveLeft);
-            this.Controls.Add(this.btnMoveRight);
-            this.Controls.Add(this.lsvEmployees);
-            this.Controls.Add(this.lsvWorkers);
-            this.Controls.Add(this.btnBack);
-            this.Name = "frmManageShift";
-            this.Text = "ManageShift";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(lblsearch);
+            Controls.Add(tbxSearch);
+            Controls.Add(dtpShiftDay);
+            Controls.Add(rbtPM);
+            Controls.Add(rbtAM);
+            Controls.Add(lblShiftTime);
+            Controls.Add(label2);
+            Controls.Add(lblWorkers);
+            Controls.Add(lblEmployees);
+            Controls.Add(btnMoveLeft);
+            Controls.Add(btnMoveRight);
+            Controls.Add(lsvEmployees);
+            Controls.Add(lsvWorkers);
+            Controls.Add(btnBack);
+            Name = "frmManageShift";
+            Text = "ManageShift";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -189,5 +217,7 @@
         private RadioButton rbtAM;
         private RadioButton rbtPM;
         private DateTimePicker dtpShiftDay;
+        private TextBox tbxSearch;
+        private Label lblsearch;
     }
 }

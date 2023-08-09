@@ -22,9 +22,19 @@ namespace Grocery_Time_Manager_App
             this.numBoxes = numBoxes;
         }
 
-        public int getAisle() {  return aisle; }
-        public string getProductType() {  return productType; }
-        public DateTime getTimeIssued() {  return timeIssued; }
-        public int getNumBoxes() { return numBoxes;}    
+        public int getAisle() 
+        {  
+            return aisle; 
+        }
+        public string getProductType() {  
+            return productType; 
+        }
+        public DateTime getTimeIssued() {  
+            return timeIssued; 
+        }
+        public int getNumBoxes() 
+        { 
+            return numBoxes;
+        }    
     }
 }

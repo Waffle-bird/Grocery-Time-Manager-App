@@ -62,6 +62,7 @@
             // 
             // lsvUnassignedLoaders
             // 
+            lsvUnassignedLoaders.FullRowSelect = true;
             lsvUnassignedLoaders.Location = new Point(12, 127);
             lsvUnassignedLoaders.Name = "lsvUnassignedLoaders";
             lsvUnassignedLoaders.Size = new Size(228, 311);

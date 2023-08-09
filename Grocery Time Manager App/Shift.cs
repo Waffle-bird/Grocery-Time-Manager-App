@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Grocery_Time_Manager_App
 {
-    internal class Shift
+    public class Shift
     {
         private List<Loader> loaders;
         private bool shiftTime;
@@ -18,5 +18,16 @@ namespace Grocery_Time_Manager_App
             this.date = date;
         }
 
+        //Get Methods
+
+        public string GetShortDate() 
+        {
+            return date.ToShortDateString();
+        }
+
+        public bool GetShiftTime()
+        {
+            return shiftTime;
+        }
     }
 }

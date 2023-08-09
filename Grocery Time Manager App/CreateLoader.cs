@@ -24,6 +24,9 @@ namespace Grocery_Time_Manager_App
             this.am = am;
             nudAisle.Minimum = 1;
 
+            //Automatically sets time issued to current system time and date on form load
+            dtpTimeIssued.Value = DateTime.Now;
+
             //Controls the maximum aisle value to the number of aisles specified in the productTypes dictionary
             nudAisle.Maximum = am.GetProductTypes().Count;
 
