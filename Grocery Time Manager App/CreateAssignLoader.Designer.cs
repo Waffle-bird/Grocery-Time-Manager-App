@@ -65,40 +65,45 @@
             lsvUnassignedLoaders.FullRowSelect = true;
             lsvUnassignedLoaders.Location = new Point(12, 127);
             lsvUnassignedLoaders.Name = "lsvUnassignedLoaders";
-            lsvUnassignedLoaders.Size = new Size(228, 311);
+            lsvUnassignedLoaders.Size = new Size(360, 311);
             lsvUnassignedLoaders.TabIndex = 2;
             lsvUnassignedLoaders.UseCompatibleStateImageBehavior = false;
+            lsvUnassignedLoaders.SelectedIndexChanged += lsvUnassignedLoaders_SelectedIndexChanged;
             // 
             // lsvAssignedLoaders
             // 
-            lsvAssignedLoaders.Location = new Point(354, 127);
+            lsvAssignedLoaders.FullRowSelect = true;
+            lsvAssignedLoaders.Location = new Point(483, 127);
             lsvAssignedLoaders.Name = "lsvAssignedLoaders";
-            lsvAssignedLoaders.Size = new Size(228, 311);
+            lsvAssignedLoaders.Size = new Size(327, 311);
             lsvAssignedLoaders.TabIndex = 3;
             lsvAssignedLoaders.UseCompatibleStateImageBehavior = false;
             // 
             // btnMoveRight
             // 
-            btnMoveRight.Location = new Point(259, 227);
+            btnMoveRight.Location = new Point(388, 227);
             btnMoveRight.Name = "btnMoveRight";
             btnMoveRight.Size = new Size(75, 23);
             btnMoveRight.TabIndex = 4;
             btnMoveRight.Text = "===>";
             btnMoveRight.UseVisualStyleBackColor = true;
+            btnMoveRight.Click += btnMoveRight_Click;
             // 
             // btnMoveLeft
             // 
-            btnMoveLeft.Location = new Point(259, 256);
+            btnMoveLeft.Location = new Point(388, 256);
             btnMoveLeft.Name = "btnMoveLeft";
             btnMoveLeft.Size = new Size(75, 23);
             btnMoveLeft.TabIndex = 5;
             btnMoveLeft.Text = "<===";
             btnMoveLeft.UseVisualStyleBackColor = true;
+            btnMoveLeft.Click += btnMoveLeft_Click;
             // 
             // cbxWorker
             // 
+            cbxWorker.DropDownStyle = ComboBoxStyle.DropDownList;
             cbxWorker.FormattingEnabled = true;
-            cbxWorker.Location = new Point(408, 72);
+            cbxWorker.Location = new Point(537, 72);
             cbxWorker.Name = "cbxWorker";
             cbxWorker.Size = new Size(121, 23);
             cbxWorker.TabIndex = 6;
@@ -106,7 +111,7 @@
             // lblWorker
             // 
             lblWorker.AutoSize = true;
-            lblWorker.Location = new Point(354, 75);
+            lblWorker.Location = new Point(483, 75);
             lblWorker.Name = "lblWorker";
             lblWorker.Size = new Size(48, 15);
             lblWorker.TabIndex = 7;
@@ -124,7 +129,7 @@
             // lblAssignedLoaders
             // 
             lblAssignedLoaders.AutoSize = true;
-            lblAssignedLoaders.Location = new Point(354, 109);
+            lblAssignedLoaders.Location = new Point(483, 109);
             lblAssignedLoaders.Name = "lblAssignedLoaders";
             lblAssignedLoaders.Size = new Size(102, 15);
             lblAssignedLoaders.TabIndex = 9;
@@ -134,7 +139,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(596, 450);
+            ClientSize = new Size(822, 450);
             Controls.Add(lblAssignedLoaders);
             Controls.Add(lblAssignLoaders);
             Controls.Add(lblWorker);

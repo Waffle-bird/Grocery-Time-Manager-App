@@ -62,8 +62,8 @@ namespace Grocery_Time_Manager_App
         public Employee RecallPreviousEmployee()
         {
             return employees[employees.Count - 1];
-        }        
-        
+        }
+
         public Employee RecallSelectedEmployee(int id)
         {
             return employees[FindEmployeeIndex(id)];
@@ -73,6 +73,24 @@ namespace Grocery_Time_Manager_App
         {
             employees[FindEmployeeIndex(id)].AddShift(newShift);
         }
+
+        public List<string> AssignableEmployees(DateTime todayDate)
+        {
+            List<string> employees = new List<string>();
+            bool am = true;
+            if (todayDate.ToString("tt").ToLower().Equals("pm"))
+            {
+                am = false;
+            }
+
+            foreach (Employee employee in CurrentlyWorkingEmployees(todayDate.ToShortDateString(), am))
+            {
+                employees.Add($"{employee.GetId()} {employee.GetName()}");
+            }
+
+            return employees;
+        }
+
 
         private int FindEmployeeIndex(int id)
         {
@@ -154,5 +172,14 @@ namespace Grocery_Time_Manager_App
             employees[FindEmployeeIndex(id)].RemoveShift(shortDate, shiftTime);
         }
 
+        public void AddLoader(int id, DateTime date, bool time, Loader loader)
+        {
+            employees[FindEmployeeIndex(id)].AddLoader(date, time, loader);
+        }
+        
+        public void RemoveLoader(int id, DateTime date, bool time)
+        {
+            employees[FindEmployeeIndex(id)].RemoveLoader(date, time);
+        }
     }
 }

@@ -29,5 +29,25 @@ namespace Grocery_Time_Manager_App
         {
             return shiftTime;
         }
+
+        //Other Methods
+        public void AddLoader(Loader loader)
+        {
+            loaders.Add(loader);
+        }
+
+        public void RemoveLoader(string shortTime)
+        {
+            int loaderIndex = 0;
+            foreach (Loader loader in loaders)
+            {
+                if (loader.GetTimeIssued().ToShortTimeString().Equals(shortTime))
+                {
+                    loaders.RemoveAt(loaderIndex);
+                    break; //test
+                }
+                loaderIndex++;
+            }
+        }
     }
 }

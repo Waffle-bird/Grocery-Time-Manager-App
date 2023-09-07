@@ -63,6 +63,13 @@ namespace Grocery_Time_Manager_App
 
         }
 
+        //Get Methods
+        public List<Employee> GetWorkingEmployeeList()
+        {
+            return employeeList;
+        }
+
+
         private void PopulateListView(DataView dv, ListView lvType)
         {
             lvType.Items.Clear();
@@ -91,6 +98,7 @@ namespace Grocery_Time_Manager_App
 
         private void btnMoveRight_Click(object sender, EventArgs e)
         {
+            //Changes the value of the time of day depending on the status of the time radio button
             string time = "am";
             if (rbtAM.Checked == false)
             {
@@ -111,11 +119,22 @@ namespace Grocery_Time_Manager_App
 
         private void btnMoveLeft_Click(object sender, EventArgs e)
         {
+            //Removes an employee from the "working" list, and adds them to the "not working" list
             am.RemoveEmployeeShift(selectedEmployeeIndex, dtpShiftDay.Value.ToShortDateString(), rbtAM.Checked);
 
+            //Visually updates the status of the "working" and "not working" list in the form
             RefreshListViews();
         }
 
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            //Perform the filter of employees
+            dvEmployees.RowFilter = string.Format("Name Like '%{0}%'", tbxSearch.Text);
+            // Code adapted from https://www.youtube.com/watch?v=cycavkXug5U
+
+            PopulateListView(dvEmployees, lsvEmployees);
+
+        }
 
         //Clears both listviews of all employees and workers, then repopulates
         private void RefreshListViews()
@@ -138,6 +157,8 @@ namespace Grocery_Time_Manager_App
 
             PopulateListView(dvEmployees, lsvEmployees);
 
+
+
             dtWorkers.Rows.Clear();
             foreach (var employee in workingEmployeeList)
             {
@@ -147,6 +168,8 @@ namespace Grocery_Time_Manager_App
             dvWorkers = new DataView(dtWorkers);
             PopulateListView(dvWorkers, lsvWorkers);
         }
+
+
 
         private void lsvWorkers_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -164,14 +187,6 @@ namespace Grocery_Time_Manager_App
             RefreshListViews();
         }
 
-        private void tbxSearch_TextChanged(object sender, EventArgs e)
-        {
-            //Perform the filter of employees
-                dvEmployees.RowFilter = string.Format("Name Like '%{0}%'", tbxSearch.Text); 
-            // Code adapted from https://www.youtube.com/watch?v=cycavkXug5U
 
-                PopulateListView(dvEmployees, lsvEmployees);
-            
-        }
     }
 }
