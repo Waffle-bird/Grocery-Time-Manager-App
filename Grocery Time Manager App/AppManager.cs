@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Grocery_Time_Manager_App
 {
@@ -175,11 +176,13 @@ namespace Grocery_Time_Manager_App
         public void AddLoader(int id, DateTime date, bool time, Loader loader)
         {
             employees[FindEmployeeIndex(id)].AddLoader(date, time, loader);
+
         }
         
         public void RemoveLoader(int id, DateTime date, bool time)
         {
             employees[FindEmployeeIndex(id)].RemoveLoader(date, time);
         }
+
     }
 }

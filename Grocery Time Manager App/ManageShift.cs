@@ -32,6 +32,8 @@ namespace Grocery_Time_Manager_App
 
             InitializeComponent();
 
+
+
             //Listview Properties
             lsvEmployees.View = View.Details;
             lsvEmployees.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -60,6 +62,11 @@ namespace Grocery_Time_Manager_App
             dtWorkers.Columns.Add("Name");
 
             RefreshListViews();
+
+            if (DateTime.Now.ToString("tt").Equals("pm"))
+            {
+                rbtPM.Checked = true;
+            }
 
         }
 
@@ -139,11 +146,14 @@ namespace Grocery_Time_Manager_App
         //Clears both listviews of all employees and workers, then repopulates
         private void RefreshListViews()
         {
+
             workingEmployeeList = am.CurrentlyWorkingEmployees(dtpShiftDay.Value.ToShortDateString(), rbtAM.Checked);
             employeeList = am.NotWorkingEmployees(dtpShiftDay.Value.ToShortDateString(), rbtAM.Checked);
 
+
             //Clears all employees out of the listview
             dtEmployees.Rows.Clear();
+
 
             //Repopulates the employee listview with the employeeList
             foreach (var employee in employeeList)
@@ -168,8 +178,6 @@ namespace Grocery_Time_Manager_App
             dvWorkers = new DataView(dtWorkers);
             PopulateListView(dvWorkers, lsvWorkers);
         }
-
-
 
         private void lsvWorkers_SelectedIndexChanged(object sender, EventArgs e)
         {

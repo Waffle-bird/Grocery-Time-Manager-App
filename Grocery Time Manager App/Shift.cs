@@ -16,6 +16,7 @@ namespace Grocery_Time_Manager_App
         {
             this.shiftTime = shiftTime;
             this.date = date;
+            this.loaders = new List<Loader>();
         }
 
         //Get Methods
@@ -34,6 +35,7 @@ namespace Grocery_Time_Manager_App
         public void AddLoader(Loader loader)
         {
             loaders.Add(loader);
+            MessageBox.Show(loader.GetProductType());
         }
 
         public void RemoveLoader(string shortTime)
@@ -44,7 +46,6 @@ namespace Grocery_Time_Manager_App
                 if (loader.GetTimeIssued().ToShortTimeString().Equals(shortTime))
                 {
                     loaders.RemoveAt(loaderIndex);
-                    break; //test
                 }
                 loaderIndex++;
             }

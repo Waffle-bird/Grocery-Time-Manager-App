@@ -23,6 +23,7 @@ namespace Grocery_Time_Manager_App
         private List<Loader> unassignedLoaderList;
         private List<Loader> assignedLoaderList;
         private string selectedLoaderDate;
+        private List<Employee> currentlyWorkingEmployees;
 
         public frmCreateAssignLoader(AppManager am)
         {
@@ -54,13 +55,13 @@ namespace Grocery_Time_Manager_App
 
             foreach (string employee in am.AssignableEmployees(DateTime.Now))
             {
-                MessageBox.Show(employee);
                 cbxWorker.Items.Add(employee);
             }
 
             this.Icon = new Icon("Images/logo.ico");
 
             PopulateListView(dvUnassignedLoaders, lsvUnassignedLoaders);
+
         }
 
         //Second constructor which receives the list of unassigned loaders when returning from the Create Loader form
@@ -155,13 +156,41 @@ namespace Grocery_Time_Manager_App
             assignedLoaderList.Add(unassignedLoaderList[FindSelectedLoaderIndex(unassignedLoaderList)]);
             unassignedLoaderList.RemoveAt(FindSelectedLoaderIndex(unassignedLoaderList));
 
+            bool isAm = true;
+            if (DateTime.Now.ToString("tt").Equals("pm"))
+            {
+                isAm = false;
+            }
+
+            string[] employeeIndexes = cbxWorker.Text.Split(' ');
+            string Id = employeeIndexes[0];
+            MessageBox.Show($"{assignedLoaderList[0].GetProductType()}");
+            am.AddLoader(Convert.ToInt32(Id), DateTime.Now, isAm, assignedLoaderList[0]);
+
             RefreshLoaderListViews();
         }
 
         private void btnMoveLeft_Click(object sender, EventArgs e)
         {
+
+            bool isAm = true;
+            if (assignedLoaderList[FindSelectedLoaderIndex(assignedLoaderList)].GetTimeIssued().ToString("tt").Equals("pm"))
+            {
+                isAm = false;
+            }
+
+            string[] employeeIndexes = cbxWorker.Text.Split(' ');
+            string Id = employeeIndexes[0];
+
+            am.RemoveLoader(Convert.ToInt32(Id), assignedLoaderList[FindSelectedLoaderIndex(assignedLoaderList)].GetTimeIssued(), isAm);
+
+            //Check for errors after this point:
+
+            MessageBox.Show(FindSelectedLoaderIndex(assignedLoaderList)+"");
+
             unassignedLoaderList.Add(assignedLoaderList[FindSelectedLoaderIndex(assignedLoaderList)]);
             assignedLoaderList.RemoveAt(FindSelectedLoaderIndex(assignedLoaderList));
+
 
             RefreshLoaderListViews();
         }
@@ -205,7 +234,7 @@ namespace Grocery_Time_Manager_App
                 }
 
                 loaderIndex++;
-            }
+            }            
             return -1;
         }
 
@@ -213,12 +242,5 @@ namespace Grocery_Time_Manager_App
         {
             selectedLoaderDate = lsvUnassignedLoaders.FocusedItem.SubItems[2].Text;
         }
-
-
-
-
-
-
-
     }
 }

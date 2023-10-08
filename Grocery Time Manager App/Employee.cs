@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Grocery_Time_Manager_App
 {
@@ -66,6 +67,13 @@ namespace Grocery_Time_Manager_App
             return -1;
         }
 
+        public string GetIdName()
+        {
+            return id + " " + name;
+
+            
+        }
+
         public void RemoveShift(string shortDate, bool shiftTime)
         {
             shifts.RemoveAt(FindShiftIndex(shortDate, shiftTime));
@@ -79,6 +87,7 @@ namespace Grocery_Time_Manager_App
         public void RemoveLoader(DateTime date, bool time)
         {
             shifts[FindShiftIndex(date.ToShortDateString(), time)].RemoveLoader(date.ToShortTimeString());
+
         }
     }
 }
