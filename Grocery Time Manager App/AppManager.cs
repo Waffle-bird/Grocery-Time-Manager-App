@@ -179,9 +179,14 @@ namespace Grocery_Time_Manager_App
 
         }
         
-        public void RemoveLoader(int id, DateTime date, bool time)
+        public void RemoveLoader(int id, DateTime shiftDate, DateTime loaderTime, bool time)
         {
-            employees[FindEmployeeIndex(id)].RemoveLoader(date, time);
+            employees[FindEmployeeIndex(id)].RemoveLoader(shiftDate, loaderTime, time);
+        }
+
+        public List<Loader> GetAssignedLoaders(string shortDate, bool shiftTime, int id)
+        {
+            return employees[FindEmployeeIndex(id)].GetAssignedLoaders(shortDate, shiftTime);
         }
 
     }

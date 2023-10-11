@@ -84,10 +84,22 @@ namespace Grocery_Time_Manager_App
             shifts[FindShiftIndex(date.ToShortDateString(), time)].AddLoader(loader);
         }
 
-        public void RemoveLoader(DateTime date, bool time)
+        public void RemoveLoader(DateTime shiftDate, DateTime loaderTime, bool time)
         {
-            shifts[FindShiftIndex(date.ToShortDateString(), time)].RemoveLoader(date.ToShortTimeString());
+            bool isAm = true;
+            if (shiftDate.ToString("tt").Equals("pm"))
+            {
+                isAm = false;
+            }
 
+            MessageBox.Show(FindShiftIndex(shiftDate.ToShortDateString(), time) + "");
+            shifts[FindShiftIndex(shiftDate.ToShortDateString(), isAm)].RemoveLoader(loaderTime.ToShortTimeString());
+
+        }
+
+        public List<Loader> GetAssignedLoaders(string shortDate, bool shiftTime)
+        {
+            return shifts[FindShiftIndex(shortDate, shiftTime)].GetLoaders();
         }
     }
 }

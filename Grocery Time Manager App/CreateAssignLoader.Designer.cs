@@ -28,132 +28,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnBack = new Button();
-            btnCreateLoader = new Button();
-            lsvUnassignedLoaders = new ListView();
-            lsvAssignedLoaders = new ListView();
-            btnMoveRight = new Button();
-            btnMoveLeft = new Button();
-            cbxWorker = new ComboBox();
-            lblWorker = new Label();
-            lblAssignLoaders = new Label();
-            lblAssignedLoaders = new Label();
-            SuspendLayout();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnCreateLoader = new System.Windows.Forms.Button();
+            this.lsvUnassignedLoaders = new System.Windows.Forms.ListView();
+            this.lsvAssignedLoaders = new System.Windows.Forms.ListView();
+            this.btnMoveRight = new System.Windows.Forms.Button();
+            this.btnMoveLeft = new System.Windows.Forms.Button();
+            this.cbxWorker = new System.Windows.Forms.ComboBox();
+            this.lblWorker = new System.Windows.Forms.Label();
+            this.lblAssignLoaders = new System.Windows.Forms.Label();
+            this.lblAssignedLoaders = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(12, 12);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(95, 23);
-            btnBack.TabIndex = 0;
-            btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(95, 23);
+            this.btnBack.TabIndex = 0;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += btnBack_Click;
+
             // 
             // btnCreateLoader
             // 
-            btnCreateLoader.Location = new Point(12, 41);
-            btnCreateLoader.Name = "btnCreateLoader";
-            btnCreateLoader.Size = new Size(182, 49);
-            btnCreateLoader.TabIndex = 1;
-            btnCreateLoader.Text = "Create Loader";
-            btnCreateLoader.UseVisualStyleBackColor = true;
-            btnCreateLoader.Click += btnCreateLoader_Click;
+            this.btnCreateLoader.Location = new System.Drawing.Point(12, 41);
+            this.btnCreateLoader.Name = "btnCreateLoader";
+            this.btnCreateLoader.Size = new System.Drawing.Size(182, 49);
+            this.btnCreateLoader.TabIndex = 1;
+            this.btnCreateLoader.Text = "Create Loader";
+            this.btnCreateLoader.UseVisualStyleBackColor = true;
+            this.btnCreateLoader.Click += btnCreateLoader_Click;
             // 
             // lsvUnassignedLoaders
             // 
-            lsvUnassignedLoaders.FullRowSelect = true;
-            lsvUnassignedLoaders.Location = new Point(12, 127);
-            lsvUnassignedLoaders.Name = "lsvUnassignedLoaders";
-            lsvUnassignedLoaders.Size = new Size(360, 311);
-            lsvUnassignedLoaders.TabIndex = 2;
-            lsvUnassignedLoaders.UseCompatibleStateImageBehavior = false;
-            lsvUnassignedLoaders.SelectedIndexChanged += lsvUnassignedLoaders_SelectedIndexChanged;
+            this.lsvUnassignedLoaders.FullRowSelect = true;
+            this.lsvUnassignedLoaders.Location = new System.Drawing.Point(12, 127);
+            this.lsvUnassignedLoaders.Name = "lsvUnassignedLoaders";
+            this.lsvUnassignedLoaders.Size = new System.Drawing.Size(360, 311);
+            this.lsvUnassignedLoaders.TabIndex = 2;
+            this.lsvUnassignedLoaders.UseCompatibleStateImageBehavior = false;
+            this.lsvUnassignedLoaders.Click += lsvUnassignedLoaders_SelectedIndexChanged;
             // 
             // lsvAssignedLoaders
             // 
-            lsvAssignedLoaders.FullRowSelect = true;
-            lsvAssignedLoaders.Location = new Point(483, 127);
-            lsvAssignedLoaders.Name = "lsvAssignedLoaders";
-            lsvAssignedLoaders.Size = new Size(327, 311);
-            lsvAssignedLoaders.TabIndex = 3;
-            lsvAssignedLoaders.UseCompatibleStateImageBehavior = false;
+            this.lsvAssignedLoaders.FullRowSelect = true;
+            this.lsvAssignedLoaders.Location = new System.Drawing.Point(483, 127);
+            this.lsvAssignedLoaders.Name = "lsvAssignedLoaders";
+            this.lsvAssignedLoaders.Size = new System.Drawing.Size(327, 311);
+            this.lsvAssignedLoaders.TabIndex = 3;
+            this.lsvAssignedLoaders.UseCompatibleStateImageBehavior = false;
             // 
             // btnMoveRight
             // 
-            btnMoveRight.Location = new Point(388, 227);
-            btnMoveRight.Name = "btnMoveRight";
-            btnMoveRight.Size = new Size(75, 23);
-            btnMoveRight.TabIndex = 4;
-            btnMoveRight.Text = "===>";
-            btnMoveRight.UseVisualStyleBackColor = true;
-            btnMoveRight.Click += btnMoveRight_Click;
+            this.btnMoveRight.Location = new System.Drawing.Point(388, 227);
+            this.btnMoveRight.Name = "btnMoveRight";
+            this.btnMoveRight.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveRight.TabIndex = 4;
+            this.btnMoveRight.Text = "===>";
+            this.btnMoveRight.UseVisualStyleBackColor = true;
+            this.btnMoveRight.Click += btnMoveRight_Click;
             // 
             // btnMoveLeft
             // 
-            btnMoveLeft.Location = new Point(388, 256);
-            btnMoveLeft.Name = "btnMoveLeft";
-            btnMoveLeft.Size = new Size(75, 23);
-            btnMoveLeft.TabIndex = 5;
-            btnMoveLeft.Text = "<===";
-            btnMoveLeft.UseVisualStyleBackColor = true;
-            btnMoveLeft.Click += btnMoveLeft_Click;
+            this.btnMoveLeft.Location = new System.Drawing.Point(388, 256);
+            this.btnMoveLeft.Name = "btnMoveLeft";
+            this.btnMoveLeft.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveLeft.TabIndex = 5;
+            this.btnMoveLeft.Text = "<===";
+            this.btnMoveLeft.UseVisualStyleBackColor = true;
+            this.btnMoveLeft.Click += btnMoveLeft_Click;
             // 
             // cbxWorker
             // 
-            cbxWorker.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxWorker.FormattingEnabled = true;
-            cbxWorker.Location = new Point(537, 72);
-            cbxWorker.Name = "cbxWorker";
-            cbxWorker.Size = new Size(121, 23);
-            cbxWorker.TabIndex = 6;
+            this.cbxWorker.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxWorker.FormattingEnabled = true;
+            this.cbxWorker.Location = new System.Drawing.Point(537, 72);
+            this.cbxWorker.Name = "cbxWorker";
+            this.cbxWorker.Size = new System.Drawing.Size(121, 23);
+            this.cbxWorker.TabIndex = 6;
+            this.cbxWorker.SelectedIndexChanged += new System.EventHandler(this.cbxWorker_SelectedIndexChanged);
             // 
             // lblWorker
             // 
-            lblWorker.AutoSize = true;
-            lblWorker.Location = new Point(483, 75);
-            lblWorker.Name = "lblWorker";
-            lblWorker.Size = new Size(48, 15);
-            lblWorker.TabIndex = 7;
-            lblWorker.Text = "Worker:";
+            this.lblWorker.AutoSize = true;
+            this.lblWorker.Location = new System.Drawing.Point(483, 75);
+            this.lblWorker.Name = "lblWorker";
+            this.lblWorker.Size = new System.Drawing.Size(48, 15);
+            this.lblWorker.TabIndex = 7;
+            this.lblWorker.Text = "Worker:";
             // 
             // lblAssignLoaders
             // 
-            lblAssignLoaders.AutoSize = true;
-            lblAssignLoaders.Location = new Point(12, 109);
-            lblAssignLoaders.Name = "lblAssignLoaders";
-            lblAssignLoaders.Size = new Size(132, 15);
-            lblAssignLoaders.TabIndex = 8;
-            lblAssignLoaders.Text = "Loaders to be Assigned:";
+            this.lblAssignLoaders.AutoSize = true;
+            this.lblAssignLoaders.Location = new System.Drawing.Point(12, 109);
+            this.lblAssignLoaders.Name = "lblAssignLoaders";
+            this.lblAssignLoaders.Size = new System.Drawing.Size(132, 15);
+            this.lblAssignLoaders.TabIndex = 8;
+            this.lblAssignLoaders.Text = "Loaders to be Assigned:";
             // 
             // lblAssignedLoaders
             // 
-            lblAssignedLoaders.AutoSize = true;
-            lblAssignedLoaders.Location = new Point(483, 109);
-            lblAssignedLoaders.Name = "lblAssignedLoaders";
-            lblAssignedLoaders.Size = new Size(102, 15);
-            lblAssignedLoaders.TabIndex = 9;
-            lblAssignedLoaders.Text = "Assigned Loaders:";
+            this.lblAssignedLoaders.AutoSize = true;
+            this.lblAssignedLoaders.Location = new System.Drawing.Point(483, 109);
+            this.lblAssignedLoaders.Name = "lblAssignedLoaders";
+            this.lblAssignedLoaders.Size = new System.Drawing.Size(102, 15);
+            this.lblAssignedLoaders.TabIndex = 9;
+            this.lblAssignedLoaders.Text = "Assigned Loaders:";
             // 
             // frmCreateAssignLoader
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 450);
-            Controls.Add(lblAssignedLoaders);
-            Controls.Add(lblAssignLoaders);
-            Controls.Add(lblWorker);
-            Controls.Add(cbxWorker);
-            Controls.Add(btnMoveLeft);
-            Controls.Add(btnMoveRight);
-            Controls.Add(lsvAssignedLoaders);
-            Controls.Add(lsvUnassignedLoaders);
-            Controls.Add(btnCreateLoader);
-            Controls.Add(btnBack);
-            Name = "frmCreateAssignLoader";
-            Text = "Create and Assign Loader";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(822, 450);
+            this.Controls.Add(this.lblAssignedLoaders);
+            this.Controls.Add(this.lblAssignLoaders);
+            this.Controls.Add(this.lblWorker);
+            this.Controls.Add(this.cbxWorker);
+            this.Controls.Add(this.btnMoveLeft);
+            this.Controls.Add(this.btnMoveRight);
+            this.Controls.Add(this.lsvAssignedLoaders);
+            this.Controls.Add(this.lsvUnassignedLoaders);
+            this.Controls.Add(this.btnCreateLoader);
+            this.Controls.Add(this.btnBack);
+            this.Name = "frmCreateAssignLoader";
+            this.Text = "Create and Assign Loader";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

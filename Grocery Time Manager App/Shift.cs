@@ -46,9 +46,16 @@ namespace Grocery_Time_Manager_App
                 if (loader.GetTimeIssued().ToShortTimeString().Equals(shortTime))
                 {
                     loaders.RemoveAt(loaderIndex);
+                    break;
                 }
                 loaderIndex++;
             }
         }
+
+        public List<Loader> GetLoaders()
+        {
+            return this.loaders;
+        }
+
     }
 }

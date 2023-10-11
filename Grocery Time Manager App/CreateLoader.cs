@@ -69,7 +69,6 @@ namespace Grocery_Time_Manager_App
             //Ensures that if the aisle number is changed, the wrong product type is not still in the aisle combo box
             cbxProductType.Text = "";
             nudNumBoxes.Value = 0;
-            dtpTimeIssued.Value = DateTime.Today;
 
             cbxProductType.Items.Clear();
             foreach (var product in am.GetProductTypes()[(int)nudAisle.Value])
