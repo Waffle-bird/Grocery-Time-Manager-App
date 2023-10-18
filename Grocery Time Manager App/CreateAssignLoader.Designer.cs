@@ -86,7 +86,7 @@
             this.btnMoveRight.Name = "btnMoveRight";
             this.btnMoveRight.Size = new System.Drawing.Size(75, 23);
             this.btnMoveRight.TabIndex = 4;
-            this.btnMoveRight.Text = "===>";
+            this.btnMoveRight.Text = "\u27f6";
             this.btnMoveRight.UseVisualStyleBackColor = true;
             this.btnMoveRight.Click += btnMoveRight_Click;
             // 
@@ -96,7 +96,7 @@
             this.btnMoveLeft.Name = "btnMoveLeft";
             this.btnMoveLeft.Size = new System.Drawing.Size(75, 23);
             this.btnMoveLeft.TabIndex = 5;
-            this.btnMoveLeft.Text = "<===";
+            this.btnMoveLeft.Text = "\u27f5";
             this.btnMoveLeft.UseVisualStyleBackColor = true;
             this.btnMoveLeft.Click += btnMoveLeft_Click;
             // 

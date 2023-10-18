@@ -27,6 +27,7 @@ namespace Grocery_Time_Manager_App
         private string shiftDate;
         private bool shiftTime;
 
+        private int counter = 0;    
 
         public frmCreateAssignLoader(AppManager am)
         {
@@ -133,7 +134,6 @@ namespace Grocery_Time_Manager_App
 
             foreach (string employee in am.AssignableEmployees(DateTime.Now))
             {
-                MessageBox.Show(employee);
                 cbxWorker.Items.Add(employee);
             }
 
@@ -175,6 +175,8 @@ namespace Grocery_Time_Manager_App
 
         private void btnMoveRight_Click(object sender, EventArgs e)
         {
+            counter++;
+            MessageBox.Show($"counter:{counter}");
             assignedLoaderList.Add(unassignedLoaderList[FindSelectedLoaderIndex(unassignedLoaderList)]);
             unassignedLoaderList.RemoveAt(FindSelectedLoaderIndex(unassignedLoaderList));
 
@@ -187,7 +189,11 @@ namespace Grocery_Time_Manager_App
             string[] employeeIndexes = cbxWorker.Text.Split(' ');
             string Id = employeeIndexes[0];
             MessageBox.Show($"{assignedLoaderList[0].GetProductType()}");
-            am.AddLoader(Convert.ToInt32(Id), DateTime.Now, isAm, assignedLoaderList[assignedLoaderList.Count-1]);
+            MessageBox.Show($"{assignedLoaderList.Count}:{am.GetAssignedLoaders(DateTime.Now.ToShortDateString(), isAm, Convert.ToInt32(Id)).Count}");
+            //am.AddLoader(Convert.ToInt32(Id), DateTime.Now, isAm, assignedLoaderList[assignedLoaderList.Count-1]);
+
+            MessageBox.Show($"{assignedLoaderList.Count}:{am.GetAssignedLoaders(DateTime.Now.ToShortDateString(), isAm, Convert.ToInt32(Id)).Count}");
+
 
             RefreshLoaderListViews();
         }
@@ -207,7 +213,7 @@ namespace Grocery_Time_Manager_App
             am.RemoveLoader(Convert.ToInt32(Id), DateTime.Now ,assignedLoaderList[FindSelectedLoaderIndex(assignedLoaderList)].GetTimeIssued(), isAm);
 
             //Check for errors after this point:
-
+            MessageBox.Show("" + FindSelectedLoaderIndex(assignedLoaderList));
             unassignedLoaderList.Add(assignedLoaderList[FindSelectedLoaderIndex(assignedLoaderList)]);
             assignedLoaderList.RemoveAt(FindSelectedLoaderIndex(assignedLoaderList));
 
@@ -266,8 +272,11 @@ namespace Grocery_Time_Manager_App
         private void cbxWorker_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] selectedEmployee = cbxWorker.Text.Split(' ');
-            assignedLoaderList = am.GetAssignedLoaders(this.shiftDate, this.shiftTime, Convert.ToInt32(selectedEmployee[0]));
 
+            MessageBox.Show("" + am.GetAssignedLoaders(this.shiftDate, this.shiftTime, Convert.ToInt32(selectedEmployee[0])).Count);
+            assignedLoaderList = am.GetAssignedLoaders(this.shiftDate, this.shiftTime, Convert.ToInt32(selectedEmployee[0]));
+            
+            
             RefreshLoaderListViews();
         }
     }

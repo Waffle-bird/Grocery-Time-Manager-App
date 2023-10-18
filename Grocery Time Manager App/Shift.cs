@@ -35,7 +35,6 @@ namespace Grocery_Time_Manager_App
         public void AddLoader(Loader loader)
         {
             loaders.Add(loader);
-            MessageBox.Show(loader.GetProductType());
         }
 
         public void RemoveLoader(string shortTime)
