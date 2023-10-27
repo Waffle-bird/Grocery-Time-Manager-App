@@ -31,6 +31,19 @@ namespace Grocery_Time_Manager_App
             return employees;
         }
 
+        public List<Employee> GetEmployees(DateTime searchDate)
+        {
+            List<Employee> foundEmployees = new List<Employee>();
+            foreach (var employee in employees)
+            {
+                if (employee.CheckShift(searchDate.ToShortDateString()))
+                {
+                    foundEmployees.Add(employee);
+                }
+            }
+            return foundEmployees;
+        }
+
         public string GetPreviousEmployeeName()
         {
             return employees[employees.Count - 1].GetName();

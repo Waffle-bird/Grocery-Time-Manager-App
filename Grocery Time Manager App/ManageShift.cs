@@ -68,7 +68,22 @@ namespace Grocery_Time_Manager_App
                 rbtPM.Checked = true;
             }
 
+            CheckEmployeeSelection();
+
         }
+        private void frmManageShift_Load(object sender, EventArgs e)
+        {
+            EventHandleCollection();
+        }
+        private void EventHandleCollection()
+        {
+            this.btnBack.Click += new EventHandler(btnBack_Click);
+            this.lsvWorkers.SelectedIndexChanged += new EventHandler(lsvWorkers_SelectedIndexChanged);
+            this.lsvEmployees.SelectedIndexChanged += new EventHandler(lsvEmployees_SelectedIndexChanged);
+            this.btnMoveLeft.Click += new System.EventHandler(btnMoveLeft_Click);
+            this.btnMoveRight.Click += new System.EventHandler(btnMoveRight_Click);
+        }
+
 
         //Get Methods
         public List<Employee> GetWorkingEmployeeList()
@@ -101,6 +116,7 @@ namespace Grocery_Time_Manager_App
         {
             //Gets the selected employee's ID from the listview by reading the first column (ID)
             selectedEmployeeIndex = Convert.ToInt32(lsvEmployees.FocusedItem.SubItems[0].Text);
+            CheckEmployeeSelection();
         }
 
         private void btnMoveRight_Click(object sender, EventArgs e)
@@ -112,6 +128,7 @@ namespace Grocery_Time_Manager_App
                 time = "pm";
             }
 
+
             //Creates a new Shift object with the parameters selected from the form
             Shift newShift = new Shift(rbtAM.Checked, dtpShiftDay.Value);
 
@@ -121,6 +138,7 @@ namespace Grocery_Time_Manager_App
             tbxSearch.Text = "";
 
             RefreshListViews();
+            CheckEmployeeSelection();
 
         }
 
@@ -131,6 +149,7 @@ namespace Grocery_Time_Manager_App
 
             //Visually updates the status of the "working" and "not working" list in the form
             RefreshListViews();
+            CheckEmployeeSelection();
         }
 
         private void tbxSearch_TextChanged(object sender, EventArgs e)
@@ -183,6 +202,7 @@ namespace Grocery_Time_Manager_App
         {
             selectedEmployeeIndex = Convert.ToInt32(lsvWorkers.FocusedItem.SubItems[0].Text);
 
+            CheckEmployeeSelection();
         }
 
         private void dtpShiftDay_ValueChanged(object sender, EventArgs e)
@@ -195,6 +215,27 @@ namespace Grocery_Time_Manager_App
             RefreshListViews();
         }
 
+        private void CheckEmployeeSelection()
+        {
+            if (lsvEmployees.SelectedItems.Count == 0 && lsvWorkers.SelectedItems.Count == 0)
+            {
+                btnMoveLeft.Enabled = false;
+                btnMoveRight.Enabled = false;
+            }
+
+            else if (lsvEmployees.SelectedItems.Count > 0)
+            {
+                btnMoveRight.Enabled = true;
+                btnMoveLeft.Enabled = false;
+            }
+
+            else if (lsvWorkers.SelectedItems.Count > 0)
+            {
+                btnMoveRight.Enabled = false;
+                btnMoveLeft.Enabled = true;
+            }
+
+        }
 
     }
 }

@@ -52,7 +52,6 @@
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += btnBack_Click;
             // 
             // lsvWorkers
             // 
@@ -62,7 +61,6 @@
             this.lsvWorkers.Size = new System.Drawing.Size(228, 311);
             this.lsvWorkers.TabIndex = 3;
             this.lsvWorkers.UseCompatibleStateImageBehavior = false;
-            this.lsvWorkers.Click += lsvWorkers_SelectedIndexChanged;
             // 
             // lsvEmployees
             // 
@@ -72,7 +70,6 @@
             this.lsvEmployees.Size = new System.Drawing.Size(228, 311);
             this.lsvEmployees.TabIndex = 4;
             this.lsvEmployees.UseCompatibleStateImageBehavior = false;
-            this.lsvEmployees.Click += lsvEmployees_SelectedIndexChanged;
             // 
             // btnMoveLeft
             // 
@@ -80,9 +77,8 @@
             this.btnMoveLeft.Name = "btnMoveLeft";
             this.btnMoveLeft.Size = new System.Drawing.Size(75, 23);
             this.btnMoveLeft.TabIndex = 7;
-            this.btnMoveLeft.Text = "\u27f5";
+            this.btnMoveLeft.Text = "⟵";
             this.btnMoveLeft.UseVisualStyleBackColor = true;
-            this.btnMoveLeft.Click += btnMoveLeft_Click;
             // 
             // btnMoveRight
             // 
@@ -90,9 +86,8 @@
             this.btnMoveRight.Name = "btnMoveRight";
             this.btnMoveRight.Size = new System.Drawing.Size(75, 23);
             this.btnMoveRight.TabIndex = 6;
-            this.btnMoveRight.Text = "\u27f6";
+            this.btnMoveRight.Text = "⟶";
             this.btnMoveRight.UseVisualStyleBackColor = true;
-            this.btnMoveRight.Click += btnMoveRight_Click;
             // 
             // lblEmployees
             // 
@@ -158,7 +153,6 @@
             this.dtpShiftDay.Name = "dtpShiftDay";
             this.dtpShiftDay.Size = new System.Drawing.Size(192, 23);
             this.dtpShiftDay.TabIndex = 15;
-            this.dtpShiftDay.ValueChanged += dtpShiftDay_ValueChanged;
             // 
             // tbxSearch
             // 
@@ -197,6 +191,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "frmManageShift";
             this.Text = "ManageShift";
+            this.Load += new System.EventHandler(this.frmManageShift_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

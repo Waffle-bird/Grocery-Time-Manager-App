@@ -41,6 +41,17 @@ namespace Grocery_Time_Manager_App
                 }             
             }
             return false;
+        } 
+        public bool CheckShift(string shortDate)
+        {
+            foreach (Shift shift in shifts)
+            {
+                if (shift.GetShortDate().Equals(shortDate)) 
+                {
+                    return true;
+                }             
+            }
+            return false;
         }
 
         //Set Methods

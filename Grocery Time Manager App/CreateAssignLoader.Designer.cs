@@ -48,8 +48,6 @@
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += btnBack_Click;
-
             // 
             // btnCreateLoader
             // 
@@ -59,7 +57,6 @@
             this.btnCreateLoader.TabIndex = 1;
             this.btnCreateLoader.Text = "Create Loader";
             this.btnCreateLoader.UseVisualStyleBackColor = true;
-            this.btnCreateLoader.Click += btnCreateLoader_Click;
             // 
             // lsvUnassignedLoaders
             // 
@@ -69,7 +66,6 @@
             this.lsvUnassignedLoaders.Size = new System.Drawing.Size(360, 311);
             this.lsvUnassignedLoaders.TabIndex = 2;
             this.lsvUnassignedLoaders.UseCompatibleStateImageBehavior = false;
-            this.lsvUnassignedLoaders.Click += lsvUnassignedLoaders_SelectedIndexChanged;
             // 
             // lsvAssignedLoaders
             // 
@@ -79,6 +75,7 @@
             this.lsvAssignedLoaders.Size = new System.Drawing.Size(327, 311);
             this.lsvAssignedLoaders.TabIndex = 3;
             this.lsvAssignedLoaders.UseCompatibleStateImageBehavior = false;
+            this.lsvAssignedLoaders.SelectedIndexChanged += new System.EventHandler(this.lsvAssignedLoaders_SelectedIndexChanged);
             // 
             // btnMoveRight
             // 
@@ -86,9 +83,8 @@
             this.btnMoveRight.Name = "btnMoveRight";
             this.btnMoveRight.Size = new System.Drawing.Size(75, 23);
             this.btnMoveRight.TabIndex = 4;
-            this.btnMoveRight.Text = "\u27f6";
+            this.btnMoveRight.Text = "⟶";
             this.btnMoveRight.UseVisualStyleBackColor = true;
-            this.btnMoveRight.Click += btnMoveRight_Click;
             // 
             // btnMoveLeft
             // 
@@ -96,9 +92,8 @@
             this.btnMoveLeft.Name = "btnMoveLeft";
             this.btnMoveLeft.Size = new System.Drawing.Size(75, 23);
             this.btnMoveLeft.TabIndex = 5;
-            this.btnMoveLeft.Text = "\u27f5";
+            this.btnMoveLeft.Text = "⟵";
             this.btnMoveLeft.UseVisualStyleBackColor = true;
-            this.btnMoveLeft.Click += btnMoveLeft_Click;
             // 
             // cbxWorker
             // 
@@ -154,6 +149,7 @@
             this.Controls.Add(this.btnBack);
             this.Name = "frmCreateAssignLoader";
             this.Text = "Create and Assign Loader";
+            this.Load += new System.EventHandler(this.frmCreateAssignLoader_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

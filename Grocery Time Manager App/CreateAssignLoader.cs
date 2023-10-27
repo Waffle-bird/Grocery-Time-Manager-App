@@ -64,15 +64,39 @@ namespace Grocery_Time_Manager_App
 
             dvUnassignedLoaders = new DataView(dtUnassignedLoaders);
 
+            //Listview Properties
+            lsvAssignedLoaders.View = View.Details;
+            //Add Columns
+            lsvAssignedLoaders.Columns.Add("Aisle");
+            lsvAssignedLoaders.Columns.Add("Product Type");
+            lsvAssignedLoaders.Columns.Add("Time Issued");
+            lsvAssignedLoaders.Columns.Add("Number of Boxes");
+
+
+            //Initialise Datatable and add Columns
+            dtAssignedLoaders = new DataTable();
+            dtAssignedLoaders.Columns.Add("Aisle");
+            dtAssignedLoaders.Columns.Add("Product Type");
+            dtAssignedLoaders.Columns.Add("Time Issued");
+            dtAssignedLoaders.Columns.Add("Number of Boxes");
+
+
 
             foreach (string employee in am.AssignableEmployees(DateTime.Now))
             {
                 cbxWorker.Items.Add(employee);
             }
 
+            if (cbxWorker.Items.Count > 0)
+            {
+                cbxWorker.SelectedIndex = 0;
+            }
+            
+
             this.Icon = new Icon("Images/logo.ico");
 
             PopulateListView(dvUnassignedLoaders, lsvUnassignedLoaders);
+            CheckEmployeeSelection();
 
         }
 
@@ -137,12 +161,24 @@ namespace Grocery_Time_Manager_App
                 cbxWorker.Items.Add(employee);
             }
 
+            cbxWorker.SelectedIndex = 0;
+
 
             RefreshLoaderListViews();
+            CheckEmployeeSelection();
 
         }
+        private void EventHandleCollection()
+        {
+            this.btnBack.Click += new EventHandler(btnBack_Click);
+            this.lsvAssignedLoaders.SelectedIndexChanged += new EventHandler(lsvAssignedLoaders_SelectedIndexChanged);
+            this.lsvUnassignedLoaders.SelectedIndexChanged += new EventHandler(lsvUnassignedLoaders_SelectedIndexChanged);
+            this.btnMoveLeft.Click += new EventHandler(btnMoveLeft_Click);
+            this.btnMoveRight.Click += new EventHandler(btnMoveRight_Click);
+            this.btnCreateLoader.Click += new EventHandler(btnCreateLoader_Click);
+        }
 
-        private void PopulateListView(DataView dv, System.Windows.Forms.ListView lv)
+            private void PopulateListView(DataView dv, System.Windows.Forms.ListView lv)
         {
             lv.Items.Clear();
 
@@ -176,7 +212,6 @@ namespace Grocery_Time_Manager_App
         private void btnMoveRight_Click(object sender, EventArgs e)
         {
             counter++;
-            MessageBox.Show($"counter:{counter}");
             assignedLoaderList.Add(unassignedLoaderList[FindSelectedLoaderIndex(unassignedLoaderList)]);
             unassignedLoaderList.RemoveAt(FindSelectedLoaderIndex(unassignedLoaderList));
 
@@ -188,11 +223,7 @@ namespace Grocery_Time_Manager_App
 
             string[] employeeIndexes = cbxWorker.Text.Split(' ');
             string Id = employeeIndexes[0];
-            MessageBox.Show($"{assignedLoaderList[0].GetProductType()}");
-            MessageBox.Show($"{assignedLoaderList.Count}:{am.GetAssignedLoaders(DateTime.Now.ToShortDateString(), isAm, Convert.ToInt32(Id)).Count}");
             //am.AddLoader(Convert.ToInt32(Id), DateTime.Now, isAm, assignedLoaderList[assignedLoaderList.Count-1]);
-
-            MessageBox.Show($"{assignedLoaderList.Count}:{am.GetAssignedLoaders(DateTime.Now.ToShortDateString(), isAm, Convert.ToInt32(Id)).Count}");
 
 
             RefreshLoaderListViews();
@@ -210,15 +241,16 @@ namespace Grocery_Time_Manager_App
             string[] employeeIndexes = cbxWorker.Text.Split(' ');
             string Id = employeeIndexes[0];
 
-            am.RemoveLoader(Convert.ToInt32(Id), DateTime.Now ,assignedLoaderList[FindSelectedLoaderIndex(assignedLoaderList)].GetTimeIssued(), isAm);
 
-            //Check for errors after this point:
-            MessageBox.Show("" + FindSelectedLoaderIndex(assignedLoaderList));
-            unassignedLoaderList.Add(assignedLoaderList[FindSelectedLoaderIndex(assignedLoaderList)]);
+            int assignedLoaderIndex = FindSelectedLoaderIndex(assignedLoaderList);
+            Loader foundLoader = assignedLoaderList[assignedLoaderIndex];
+            unassignedLoaderList.Add(foundLoader);
             assignedLoaderList.RemoveAt(FindSelectedLoaderIndex(assignedLoaderList));
 
 
             RefreshLoaderListViews();
+
+            am.RemoveLoader(Convert.ToInt32(Id), DateTime.Now, foundLoader.GetTimeIssued(), isAm);
         }
 
         private void RefreshLoaderListViews()
@@ -238,6 +270,7 @@ namespace Grocery_Time_Manager_App
 
             dtAssignedLoaders.Clear();
 
+
             foreach (var loader in assignedLoaderList)   //Code from Microsoft Teams
             {
                 dtAssignedLoaders.Rows.Add(loader.GetAisle(), loader.GetProductType(), loader.GetTimeIssued(), loader.GetNumBoxes());
@@ -254,30 +287,66 @@ namespace Grocery_Time_Manager_App
             int loaderIndex = 0;
             foreach (Loader loader in loaders)
             {
+
                 if (selectedLoaderTime.Equals(loader.GetTimeIssued().ToString()))
                 {
                     return loaderIndex;
                 }
 
                 loaderIndex++;
-            }            
+            }
             return -1;
         }
 
         private void lsvUnassignedLoaders_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedLoaderTime = lsvUnassignedLoaders.FocusedItem.SubItems[2].Text;
+            CheckEmployeeSelection();
         }
+
+        private void lsvAssignedLoaders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedLoaderTime = lsvAssignedLoaders.FocusedItem.SubItems[2].Text;
+            CheckEmployeeSelection();
+        }
+
 
         private void cbxWorker_SelectedIndexChanged(object sender, EventArgs e)
         {
             string[] selectedEmployee = cbxWorker.Text.Split(' ');
 
-            MessageBox.Show("" + am.GetAssignedLoaders(this.shiftDate, this.shiftTime, Convert.ToInt32(selectedEmployee[0])).Count);
             assignedLoaderList = am.GetAssignedLoaders(this.shiftDate, this.shiftTime, Convert.ToInt32(selectedEmployee[0]));
             
             
             RefreshLoaderListViews();
+        }
+
+        private void CheckEmployeeSelection()
+        {
+            if (lsvUnassignedLoaders.SelectedItems.Count == 0 && lsvAssignedLoaders.SelectedItems.Count == 0)
+            {
+                btnMoveLeft.Enabled = false;
+                btnMoveRight.Enabled = false;
+            }
+
+            else if (lsvUnassignedLoaders.SelectedItems.Count > 0)
+            {
+                btnMoveRight.Enabled = true;
+                btnMoveLeft.Enabled = false;
+            }
+
+            else if (lsvAssignedLoaders.SelectedItems.Count > 0)
+            {
+                btnMoveRight.Enabled = false;
+                btnMoveLeft.Enabled = true;
+            }
+
+        }
+
+
+        private void frmCreateAssignLoader_Load_1(object sender, EventArgs e)
+        {
+            EventHandleCollection();
         }
     }
 }
