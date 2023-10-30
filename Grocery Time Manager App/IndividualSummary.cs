@@ -81,11 +81,12 @@ namespace Grocery_Time_Manager_App
             window.Show();
         }
 
+        private void lsvWorker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedEmployeeIndex = Convert.ToInt32(lsvWorker.FocusedItem.SubItems[0].Text);
 
-
-
-
-
-
+            //rtbSummary.Text = "";
+            rtbSummary.Text = am.EmployeeSummary(selectedEmployeeIndex, dtpSummaryDate.Value.ToShortDateString());
+        }
     }
 }

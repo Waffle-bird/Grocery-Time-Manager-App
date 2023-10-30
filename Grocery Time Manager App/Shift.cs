@@ -56,5 +56,30 @@ namespace Grocery_Time_Manager_App
             return this.loaders;
         }
 
+        private int SumBoxes()
+        {
+            int sumBoxes = 0;
+            foreach (var loader in loaders)
+            {
+                sumBoxes += loader.GetNumBoxes();
+            }
+
+            return sumBoxes;
+        }
+
+        public string ShiftSummary()
+        {
+            string time = "am";
+            if (shiftTime == false)
+            {
+                time = "pm";
+            }
+
+
+            return $"Date: {date.ToShortDateString()}\n" +
+                $"Time: {time}\n" +
+                $"No. Boxes Completed: {SumBoxes()}";
+        }
+
     }
 }

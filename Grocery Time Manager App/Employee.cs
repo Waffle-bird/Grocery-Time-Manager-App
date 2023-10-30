@@ -78,6 +78,22 @@ namespace Grocery_Time_Manager_App
             return -1;
         }
 
+        public int FindShiftIndex(string shortDate)
+        {
+            //Finds a shift with the same unique identifiers (shortDate) in the shifts list
+            int shiftIndex = 0;
+            foreach (Shift shift in shifts)
+            {
+                if (shift.GetShortDate().Equals(shortDate))
+                {
+                    return shiftIndex;
+                }
+                shiftIndex++;
+            }
+
+            return -1;
+        }
+
         public string GetIdName()
         {
             return id + " " + name;
@@ -111,6 +127,11 @@ namespace Grocery_Time_Manager_App
         public List<Loader> GetAssignedLoaders(string shortDate, bool shiftTime)
         {
             return shifts[FindShiftIndex(shortDate, shiftTime)].GetLoaders();
+        }
+
+        public string ShiftSummary(string shiftDate)
+        {
+            return shifts[FindShiftIndex(shiftDate)].ShiftSummary();
         }
     }
 }

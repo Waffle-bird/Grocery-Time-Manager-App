@@ -80,8 +80,9 @@ namespace Grocery_Time_Manager_App
             this.btnBack.Click += new EventHandler(btnBack_Click);
             this.lsvWorkers.SelectedIndexChanged += new EventHandler(lsvWorkers_SelectedIndexChanged);
             this.lsvEmployees.SelectedIndexChanged += new EventHandler(lsvEmployees_SelectedIndexChanged);
-            this.btnMoveLeft.Click += new System.EventHandler(btnMoveLeft_Click);
-            this.btnMoveRight.Click += new System.EventHandler(btnMoveRight_Click);
+            this.btnMoveLeft.Click += new EventHandler(btnMoveLeft_Click);
+            this.btnMoveRight.Click += new EventHandler(btnMoveRight_Click);
+            this.tbxSearch.TextChanged += new EventHandler(tbxSearch_TextChanged);
         }
 
 

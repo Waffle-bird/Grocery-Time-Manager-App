@@ -11,6 +11,25 @@ namespace Grocery_Time_Manager_App
             this.am = am;
         }
 
+        private void EventHandleCollection()
+        {
+            this.btnCreateAssignLoader.Click += new EventHandler(btnCreateAssignLoader_Click);
+            this.btnCreateAssignLoader.MouseEnter += new EventHandler(btnCreateAssignLoader_MouseEnter);
+            this.btnCreateAssignLoader.MouseLeave += new EventHandler(btnCreateAssignLoader_MouseLeave);
+
+            this.btnManageShift.Click += new EventHandler(btnManageShift_Click);
+            this.btnManageShift.MouseEnter += new EventHandler(btnManageShift_MouseEnter);
+            this.btnManageShift.MouseLeave += new EventHandler(btnManageShift_MouseLeave);
+
+            this.btnIndividualSummary.Click += new EventHandler(btnIndividualSummary_Click);
+            this.btnIndividualSummary.MouseEnter += new EventHandler(btnIndividualSummary_MouseEnter);
+            this.btnIndividualSummary.MouseLeave += new EventHandler(btnIndividualSummary_MouseLeave);
+
+            this.btnAddEmployee.Click += new EventHandler(btnAddEmployee_Click);
+            this.btnAddEmployee.MouseEnter += new EventHandler(btnAddEmployee_MouseEnter);
+            this.btnAddEmployee.MouseLeave += new EventHandler(btnAddEmployee_MouseLeave);
+
+        }
 
 
         private void btnCreateAssignLoader_Click(object sender, EventArgs e)
@@ -106,21 +125,13 @@ namespace Grocery_Time_Manager_App
             btnIndividualSummary.ForeColor = Color.FromArgb(226, 25, 44);
         }
 
-        private void btnTeamSummary_MouseEnter(object sender, EventArgs e)
-        {
-            btnTeamSummary.BackColor = Color.FromArgb(226, 25, 44);
-            btnTeamSummary.ForeColor = Color.FromArgb(255, 255, 255);
-        }
-
-        private void btnTeamSummary_MouseLeave(object sender, EventArgs e)
-        {
-            btnTeamSummary.BackColor = Color.FromArgb(255, 255, 255);
-            btnTeamSummary.ForeColor = Color.FromArgb(226, 25, 44);
-        }
-
         private void frmHome_Load(object sender, EventArgs e)
         {
+            EventHandleCollection();
         }
+
+
+
 
 
 

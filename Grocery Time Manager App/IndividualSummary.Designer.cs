@@ -31,11 +31,11 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.lsvWorker = new System.Windows.Forms.ListView();
             this.lblSelectWorker = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.lblSummary = new System.Windows.Forms.Label();
             this.dtpSummaryDate = new System.Windows.Forms.DateTimePicker();
             this.lblSummaryDate = new System.Windows.Forms.Label();
             this.btnTeamSummary = new System.Windows.Forms.Button();
+            this.rtbSummary = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btnBack
@@ -50,11 +50,13 @@
             // 
             // lsvWorker
             // 
+            this.lsvWorker.FullRowSelect = true;
             this.lsvWorker.Location = new System.Drawing.Point(12, 122);
             this.lsvWorker.Name = "lsvWorker";
             this.lsvWorker.Size = new System.Drawing.Size(239, 316);
             this.lsvWorker.TabIndex = 4;
             this.lsvWorker.UseCompatibleStateImageBehavior = false;
+            this.lsvWorker.SelectedIndexChanged += new System.EventHandler(this.lsvWorker_SelectedIndexChanged);
             // 
             // lblSelectWorker
             // 
@@ -64,14 +66,6 @@
             this.lblSelectWorker.Size = new System.Drawing.Size(82, 15);
             this.lblSelectWorker.TabIndex = 5;
             this.lblSelectWorker.Text = "Select Worker:";
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(271, 122);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(479, 316);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // lblSummary
             // 
@@ -108,16 +102,25 @@
             this.btnTeamSummary.UseVisualStyleBackColor = true;
             this.btnTeamSummary.Click += new System.EventHandler(this.btnTeamSummary_Click);
             // 
+            // rtbSummary
+            // 
+            this.rtbSummary.Location = new System.Drawing.Point(271, 122);
+            this.rtbSummary.Name = "rtbSummary";
+            this.rtbSummary.ReadOnly = true;
+            this.rtbSummary.Size = new System.Drawing.Size(517, 316);
+            this.rtbSummary.TabIndex = 16;
+            this.rtbSummary.Text = "";
+            // 
             // frmIndividualSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rtbSummary);
             this.Controls.Add(this.btnTeamSummary);
             this.Controls.Add(this.lblSummaryDate);
             this.Controls.Add(this.dtpSummaryDate);
             this.Controls.Add(this.lblSummary);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.lblSelectWorker);
             this.Controls.Add(this.lsvWorker);
             this.Controls.Add(this.btnBack);
@@ -133,10 +136,10 @@
         private Button btnBack;
         private ListView lsvWorker;
         private Label lblSelectWorker;
-        private ListView listView1;
         private Label lblSummary;
         private DateTimePicker dtpSummaryDate;
         private Label lblSummaryDate;
         private Button btnTeamSummary;
+        private RichTextBox rtbSummary;
     }
 }

@@ -31,133 +31,103 @@ namespace Grocery_Time_Manager_App
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
-            btnCreateAssignLoader = new Button();
-            btnManageShift = new Button();
-            btnIndividualSummary = new Button();
-            btnTeamSummary = new Button();
-            btnAddEmployee = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.btnCreateAssignLoader = new System.Windows.Forms.Button();
+            this.btnManageShift = new System.Windows.Forms.Button();
+            this.btnIndividualSummary = new System.Windows.Forms.Button();
+            this.btnAddEmployee = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // btnCreateAssignLoader
             // 
-            btnCreateAssignLoader.BackColor = Color.White;
-            btnCreateAssignLoader.FlatAppearance.BorderColor = Color.FromArgb(226, 25, 44);
-            btnCreateAssignLoader.FlatStyle = FlatStyle.Flat;
-            btnCreateAssignLoader.ForeColor = Color.FromArgb(226, 25, 44);
-            btnCreateAssignLoader.Location = new Point(12, 101);
-            btnCreateAssignLoader.Margin = new Padding(0);
-            btnCreateAssignLoader.Name = "btnCreateAssignLoader";
-            btnCreateAssignLoader.Size = new Size(324, 93);
-            btnCreateAssignLoader.TabIndex = 1;
-            btnCreateAssignLoader.TabStop = false;
-            btnCreateAssignLoader.Text = "Create and Assign Loader";
-            btnCreateAssignLoader.UseVisualStyleBackColor = false;
-            btnCreateAssignLoader.Click += btnCreateAssignLoader_Click;
-            btnCreateAssignLoader.MouseEnter += btnCreateAssignLoader_MouseEnter;
-            btnCreateAssignLoader.MouseLeave += btnCreateAssignLoader_MouseLeave;
+            this.btnCreateAssignLoader.BackColor = System.Drawing.Color.White;
+            this.btnCreateAssignLoader.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(25)))), ((int)(((byte)(44)))));
+            this.btnCreateAssignLoader.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateAssignLoader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(25)))), ((int)(((byte)(44)))));
+            this.btnCreateAssignLoader.Location = new System.Drawing.Point(12, 101);
+            this.btnCreateAssignLoader.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCreateAssignLoader.Name = "btnCreateAssignLoader";
+            this.btnCreateAssignLoader.Size = new System.Drawing.Size(324, 93);
+            this.btnCreateAssignLoader.TabIndex = 1;
+            this.btnCreateAssignLoader.TabStop = false;
+            this.btnCreateAssignLoader.Text = "Create and Assign Loader";
+            this.btnCreateAssignLoader.UseVisualStyleBackColor = false;
             // 
             // btnManageShift
             // 
-            btnManageShift.FlatAppearance.BorderColor = Color.FromArgb(226, 25, 44);
-            btnManageShift.FlatStyle = FlatStyle.Flat;
-            btnManageShift.ForeColor = Color.FromArgb(226, 25, 44);
-            btnManageShift.Location = new Point(12, 200);
-            btnManageShift.Margin = new Padding(0);
-            btnManageShift.Name = "btnManageShift";
-            btnManageShift.Size = new Size(161, 73);
-            btnManageShift.TabIndex = 2;
-            btnManageShift.TabStop = false;
-            btnManageShift.Text = "Manage Shift";
-            btnManageShift.UseVisualStyleBackColor = true;
-            btnManageShift.Click += btnManageShift_Click;
-            btnManageShift.MouseEnter += btnManageShift_MouseEnter;
-            btnManageShift.MouseLeave += btnManageShift_MouseLeave;
+            this.btnManageShift.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(25)))), ((int)(((byte)(44)))));
+            this.btnManageShift.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageShift.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(25)))), ((int)(((byte)(44)))));
+            this.btnManageShift.Location = new System.Drawing.Point(12, 200);
+            this.btnManageShift.Margin = new System.Windows.Forms.Padding(0);
+            this.btnManageShift.Name = "btnManageShift";
+            this.btnManageShift.Size = new System.Drawing.Size(161, 73);
+            this.btnManageShift.TabIndex = 2;
+            this.btnManageShift.TabStop = false;
+            this.btnManageShift.Text = "Manage Shift";
+            this.btnManageShift.UseVisualStyleBackColor = true;
             // 
             // btnIndividualSummary
             // 
-            btnIndividualSummary.FlatAppearance.BorderColor = Color.FromArgb(226, 25, 44);
-            btnIndividualSummary.FlatStyle = FlatStyle.Flat;
-            btnIndividualSummary.ForeColor = Color.FromArgb(226, 25, 44);
-            btnIndividualSummary.Location = new Point(179, 200);
-            btnIndividualSummary.Name = "btnIndividualSummary";
-            btnIndividualSummary.Size = new Size(157, 34);
-            btnIndividualSummary.TabIndex = 3;
-            btnIndividualSummary.TabStop = false;
-            btnIndividualSummary.Text = "Individual Summary";
-            btnIndividualSummary.UseVisualStyleBackColor = true;
-            btnIndividualSummary.Click += btnIndividualSummary_Click;
-            btnIndividualSummary.MouseEnter += btnIndividualSummary_MouseEnter;
-            btnIndividualSummary.MouseLeave += btnIndividualSummary_MouseLeave;
-            // 
-            // btnTeamSummary
-            // 
-            btnTeamSummary.FlatAppearance.BorderColor = Color.FromArgb(226, 25, 44);
-            btnTeamSummary.FlatStyle = FlatStyle.Flat;
-            btnTeamSummary.ForeColor = Color.FromArgb(226, 25, 44);
-            btnTeamSummary.Location = new Point(179, 239);
-            btnTeamSummary.Name = "btnTeamSummary";
-            btnTeamSummary.Size = new Size(157, 34);
-            btnTeamSummary.TabIndex = 4;
-            btnTeamSummary.TabStop = false;
-            btnTeamSummary.Text = "Team Summary";
-            btnTeamSummary.UseVisualStyleBackColor = true;
-            btnTeamSummary.Click += btnTeamSummary_Click;
-            btnTeamSummary.MouseEnter += btnTeamSummary_MouseEnter;
-            btnTeamSummary.MouseLeave += btnTeamSummary_MouseLeave;
+            this.btnIndividualSummary.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(25)))), ((int)(((byte)(44)))));
+            this.btnIndividualSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIndividualSummary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(25)))), ((int)(((byte)(44)))));
+            this.btnIndividualSummary.Location = new System.Drawing.Point(179, 200);
+            this.btnIndividualSummary.Name = "btnIndividualSummary";
+            this.btnIndividualSummary.Size = new System.Drawing.Size(157, 73);
+            this.btnIndividualSummary.TabIndex = 3;
+            this.btnIndividualSummary.TabStop = false;
+            this.btnIndividualSummary.Text = "Employee Summary";
+            this.btnIndividualSummary.UseVisualStyleBackColor = true;
             // 
             // btnAddEmployee
             // 
-            btnAddEmployee.FlatAppearance.BorderColor = Color.FromArgb(112, 51, 119);
-            btnAddEmployee.FlatStyle = FlatStyle.Flat;
-            btnAddEmployee.ForeColor = Color.FromArgb(112, 51, 119);
-            btnAddEmployee.Location = new Point(115, 279);
-            btnAddEmployee.Margin = new Padding(0);
-            btnAddEmployee.Name = "btnAddEmployee";
-            btnAddEmployee.Size = new Size(120, 25);
-            btnAddEmployee.TabIndex = 5;
-            btnAddEmployee.TabStop = false;
-            btnAddEmployee.Text = "Add Employee";
-            btnAddEmployee.UseVisualStyleBackColor = true;
-            btnAddEmployee.Click += btnAddEmployee_Click;
-            btnAddEmployee.MouseEnter += btnAddEmployee_MouseEnter;
-            btnAddEmployee.MouseLeave += btnAddEmployee_MouseLeave;
+            this.btnAddEmployee.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(51)))), ((int)(((byte)(119)))));
+            this.btnAddEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(51)))), ((int)(((byte)(119)))));
+            this.btnAddEmployee.Location = new System.Drawing.Point(115, 279);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddEmployee.Name = "btnAddEmployee";
+            this.btnAddEmployee.Size = new System.Drawing.Size(120, 25);
+            this.btnAddEmployee.TabIndex = 5;
+            this.btnAddEmployee.TabStop = false;
+            this.btnAddEmployee.Text = "Add Employee";
+            this.btnAddEmployee.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 9);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(119, 86);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(119, 86);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // frmHome
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(345, 313);
-            Controls.Add(pictureBox1);
-            Controls.Add(btnAddEmployee);
-            Controls.Add(btnTeamSummary);
-            Controls.Add(btnIndividualSummary);
-            Controls.Add(btnManageShift);
-            Controls.Add(btnCreateAssignLoader);
-            Name = "frmHome";
-            Text = "Home";
-            Load += frmHome_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(345, 313);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnAddEmployee);
+            this.Controls.Add(this.btnIndividualSummary);
+            this.Controls.Add(this.btnManageShift);
+            this.Controls.Add(this.btnCreateAssignLoader);
+            this.Name = "frmHome";
+            this.Text = "Home";
+            this.Load += new System.EventHandler(this.frmHome_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
         private Button btnCreateAssignLoader;
         private Button btnManageShift;
         private Button btnIndividualSummary;
-        private Button btnTeamSummary;
         private Button btnAddEmployee;
         private PictureBox pictureBox1;
     }

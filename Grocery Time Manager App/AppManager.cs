@@ -10,19 +10,18 @@ namespace Grocery_Time_Manager_App
     public class AppManager
     {
         private List<Employee> employees;
-        Dictionary<int, List<string>> productTypes;
+        private readonly Dictionary<int, List<string>> PRODUCTTYPES = new Dictionary<int, List<string>>()
+            {
+                {1, new List<string>(){"Juice", "Cereal", "Spreads", "Desserts" } },
+                {2, new List<string>(){"Sugar", "Baking","Museli Bars"}},
+                {3, new List<string>(){"Mexican", "Fish", "Pasta","Rice","Sauce", }}
+            };
 
         //Constructor
         public AppManager()
         {
             employees = new List<Employee>();
 
-            productTypes = new Dictionary<int, List<string>>()
-            {
-                {1, new List<string>(){"Juice", "Cereal", "Spreads", "Desserts" } },
-                {2, new List<string>(){"Sugar", "Baking","Museli Bars"}},
-                {3, new List<string>(){"Mexican", "Fish", "Pasta","Rice","Sauce", }}
-            };
         }
 
         //Get Methods
@@ -61,7 +60,7 @@ namespace Grocery_Time_Manager_App
 
         public Dictionary<int, List<string>> GetProductTypes()
         {
-            return productTypes;
+            return PRODUCTTYPES;
         }
 
         //Set Methods
@@ -200,6 +199,11 @@ namespace Grocery_Time_Manager_App
         public List<Loader> GetAssignedLoaders(string shortDate, bool shiftTime, int id)
         {
             return employees[FindEmployeeIndex(id)].GetAssignedLoaders(shortDate, shiftTime);
+        }
+
+        public string EmployeeSummary(int id, string shiftDate)
+        {
+            return employees[FindEmployeeIndex(id)].ShiftSummary(shiftDate);
         }
 
     }
